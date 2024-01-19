@@ -1,0 +1,182 @@
+
+
+app-site-footer {
+    background: var(--footercolor); color: var(--footerfontcolor);display: block;height: $footerHeight;
+    .powered{
+        background: url('../../img/RENOVA-powered.png');
+        background-size: contain;
+        height: 50px;
+        width: 120px;
+        background-repeat: no-repeat;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+
+    .footer-bottom {
+        // padding-left: 130px;
+    // padding-right: 200px;
+        text-align: center;
+        font-size: .7rem;
+        margin-top: 1em;
+    }
+    .info { margin-left: calc(100%/6);margin-right: calc(100%/6);padding-top: 1em; width: calc(100%*4/6);}
+
+    .contact {margin-right: calc(100%/6);padding-top: 1em; width: calc(100%/3); padding-left: 1em;}
+    .contact .title {margin-top: -.3em;}
+
+
+
+    .footer-text2 {margin-top: 1em;}
+
+    .contact .title {    
+        font-size: 1.5em;
+        font-weight: 600;
+    }
+
+    .contact input[type="email"] {border-radius: 0;margin-top: .5em;margin-bottom: .5em;max-width: 23em;}
+
+    .frow2 app-nav-item a.link-btn {color: var(--footerfontcolor) !important;display: flex;justify-content: space-around;}
+    .frow2 {
+        app-nav-item a.link-btn:hover {
+            color: var(--navhoverfontcolor) !important;
+        }
+        
+        app-nav-item a{
+            transition: 100ms;
+        }
+    }
+    .frow2 ul {margin: auto !important;display: flex;justify-content: space-around;width: min-content;}
+
+    .frow2 ul li {display: block;margin-top: 0;margin-bottom: 0;margin: .5em;margin-top: 0;margin-bottom: 0;}
+
+    .frow2 {position: absolute;width: 100%;bottom: .5em;}
+
+    position: relative;
+    .social button svg {
+        color: var(--footerfontcolor) !important;
+    }
+    .social{
+        button.sb-wrapper.sb-show-icon {width: auto !important;min-width: 0 !important;}
+
+        .sb-content .sb-icon {width: fit-content !important;min-width: 0 !important;margin: 0 !important;}
+        position: absolute;top: 0;right: .3rem;padding: .5em;display: flex;
+
+        share-button button {width: 50px;}
+
+        share-button button .sb-content {min-width: 0 !important;
+            width: -moz-fit-content !important;
+            width: auto !important;
+            display: block;
+            margin: 0 !important;
+            /* border: solid 2px white; */
+            /* border-radius: 50%; */
+            font-size: 1.2rem;
+            padding: 0 !important;}
+        button.sb-wrapper.sb-show-icon.instagram .db-content {height: fit-content !important;display: flex;}
+
+        button.sb-wrapper.sb-show-icon.instagram fa-icon {height: fit-content !important;min-height: 0 !important;display: flex;}
+    }
+
+    
+}
+
+@media (min-width: 600px) {
+    
+}
+@media (max-width: 600px) {
+    app-site-footer {height: fit-content !important;display: flex;flex-direction: column;align-content: space-around;}
+    
+    .frow1 {display: flex;flex-direction: column-reverse;flex-wrap: nowrap;align-content: space-around;width: calc(100vw) !important;}
+
+    .contact {width: calc(100% - .2rem) !important;margin-left: 0em;margin-right: 0.2em;
+        input {max-width: none !important;}
+    }
+    
+    .contact button {width: 100%;}
+    
+    .info {text-align: justify;padding: 1em; font-size: .9rem !important;}
+
+    
+    .frow2.row {width: 100vw;padding: 1em;padding-bottom: calc(1em  + 80px);
+        position: initial;
+        ul {display: flex;flex-direction: column;margin-left: 0 !important;color: yellow !important; width: calc(100vw - 1em) !important;margin-right: 0 !important;
+            li a {text-align: center !important;margin: auto;}
+            li {padding-bottom: .5em;border-bottom: solid 1px white;padding-top: .5em;}
+        }
+    }
+
+
+
+    .mobile .social {position: initial;display: flex;margin-left: auto !important;flex-direction: row;width: auto !important;}
+        .info {width: 100% !important;margin: 0 !important;}
+}
+
+
+@media (max-height: 600px) {
+    app-site-footer {height: fit-content !important;display: flex;flex-direction: column;align-content: space-around;}
+    
+    .frow1 {display: flex;flex-direction: column-reverse;flex-wrap: nowrap;align-content: space-around;width: calc(100vw) !important;}
+
+    .contact {width: calc(100% - .2rem) !important;margin-left: 0em;margin-right: 0.2em;
+        input {max-width: none !important;}
+    }
+    
+    .contact button {width: 100%;}
+    
+    .info {text-align: justify;padding: 1em; font-size: .9rem !important;}
+
+    
+    .frow2.row {width: 100vw;padding: 1em;padding-bottom: calc(1em  + 80px);
+        position: initial;
+        ul {display: flex;flex-direction: column;margin-left: 0 !important;color: yellow !important; width: calc(100vw - 1em) !important;margin-right: 0 !important;
+            li a {text-align: center !important;margin: auto;}
+            li {padding-bottom: .5em;border-bottom: solid 1px white;padding-top: .5em;}
+        }
+    }
+
+
+
+    .mobile .social {position: initial;display: flex;margin-left: auto !important;flex-direction: row;width: auto !important;}
+        .info {width: 100% !important;margin: 0 !important;}
+}
+
+@media (max-height: 600px) and  (min-width: 600px){
+    app-site-footer{
+        .tablet .social {position: initial;display: flex;margin-left: auto !important;flex-direction: row;width: auto !important;}
+    }
+    
+}
+
+
+@media (min-width: 768px) and (orientation: portrait){
+    
+    app-site-footer {height: fit-content;padding-bottom: 5em;
+            
+        .frow2.row ul {margin-bottom: 1em !important;margin-top: 1em !important;}
+
+        .frow2.row {position: initial;}
+
+        .frow2.row {width: 100vw !important;}
+
+        .frow1.row {padding-top: 3em;}
+        .contact button {max-width: none !important;width: 100%;}
+    }
+   
+}
+
+@media (min-width: 768px) and (max-width: 1024) and  (orientation: landscape){
+    
+    app-site-footer {height: fit-content;padding-bottom: 5em;
+            
+        .frow2.row ul {margin-bottom: 1em !important;margin-top: 1em !important;}
+
+        .frow2.row {position: initial;}
+
+        .frow2.row {width: 100vw !important;}
+
+        .frow1.row {padding-top: 3em;}
+        .contact button {max-width: none !important;width: 100%;}
+    }
+   
+}

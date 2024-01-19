@@ -1,0 +1,480 @@
+/* EStilos del index */
+
+.image {
+    background-image: url(../img/team.png);
+    background-size: 100% auto;
+    background-position: center top;
+    background-repeat: no-repeat;
+ 
+   }
+
+   .body-image {
+    background-image: url(../img/bg.jpg);
+    background-size: 100% auto;
+    background-position: center top;
+    background-repeat: no-repeat;
+   }
+
+   
+   .body-image-singin {
+    background-image: url(../img/lineas.png);
+    background-size: 100% auto;
+    background-position: center top;
+    background-repeat: no-repeat;
+   }
+
+   .body-image-register{
+    background-image: url(../img/lineas.png);
+    background-size: 130% ;
+    background-position: center top;
+    background-repeat: no-repeat;
+   }
+   
+   
+   .lineas {
+    background-image: url(../img/lineas.png);
+    background-size: 100% 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+   }
+   
+   .opacidad 
+   {opacity: 0.8; /* See the text more clearly over the background */
+   }
+   
+   .carheader {
+     position: absolute;
+     top: 470px;
+     left: 0px;
+     height: 136px;
+     width: 900px;
+   
+   }
+   
+   .title{
+     text-shadow: 5px 3px 6px var(--unnamed-color-000000);
+   text-align: left;
+   letter-spacing: 0.68px;
+   color: #FFFBFB;
+   text-shadow: 5px 3px 6px #000000;
+   font: var(--unnamed-font-style-normal) normal 300 38px/52px Open Sans;
+   }
+   
+   .company {
+   width: 500px;
+   margin-left: 99px;
+   }
+   
+   .segundo-parrafo {
+   width: 800px;
+   margin-left: 399px;
+   }
+   
+   .tercer-parrafo {
+   width: 500px;
+   margin-left: 99px;
+   }
+   
+   .footer{
+     height: 170px;
+     background: #EEEEEE 0% 0% no-repeat padding-box;
+     opacity: 1;
+   }
+   
+   .parrafo-primera-imagen{
+   
+     /*  font: var(--unnamed-font-style-normal) normal 300 38px/52px Open Sans;
+      text-shadow: 5px 3px 6px var(--unnamed-color-000000);
+      text-align: left;
+      font: normal normal 300 38px/52px Open Sans;
+      letter-spacing: 0.68px;
+      color: #FFFBFB;
+      text-shadow: 5px 3px 6px #000000;
+      opacity: 1; */
+    
+      left: 90px;
+      width: 575px;
+      height: 52px;
+      /* UI Properties */
+      font: var(--unnamed-font-style-normal) normal 300 38px/52px Open Sans;
+      text-shadow: 5px 3px 6px var(--unnamed-color-000000);
+      text-align: left;
+      font: normal normal 300 38px/52px Open Sans;
+      letter-spacing: 0.68px;
+      color: #FFFBFB;
+     
+
+   }
+   
+   .round {
+   margin: 0 0 15px auto;
+   padding: 5px;
+   border-radius: 19px;
+      }
+   
+   .input::placeholder {
+     color: rgb(248, 247, 247);
+   }
+   
+   .bold {
+   font: var(--unnamed-font-style-normal) normal bold 38px/52px Open Sans;
+   text-align: left;
+   font: normal normal bold 38px/52px Open Sans;
+   letter-spacing: 0.68px;
+   color: #FFFBFB;
+   }
+   
+   .togheter {
+     font: var(--unnamed-font-style-normal) normal 800 26px/36px Open Sans;
+   letter-spacing: var(--unnamed-character-spacing-0);
+   text-align: left;
+   font: normal normal 800 26px/36px Open Sans;
+   letter-spacing: 0px;
+   color: #FFFFFF;
+   text-shadow: 0px 3px 6px #000000BA;
+   opacity: 1;
+   }
+   
+   .redondeadonorelieve {
+       /*  width: 250px;
+       margin-top: 9px;
+       padding: 3px;
+       border-radius: 15px;
+       border: 1px solid #39c; */
+       margin-top: 9px;
+       width: 237px;
+        height: 26px;
+        /* UI Properties */
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        border-radius: 15px;
+     }
+   
+     .banner-primera-imagen{
+       width: 950px; 
+       margin-top: 355px;
+       background: var(--unnamed-color-000000) 0% 0% no-repeat padding-box;
+       background: #000000 0% 0% no-repeat padding-box;
+       opacity: 0.60;
+       margin-left: 20px;
+     }
+     /* Fin de los estilos del index */
+
+     /* Estilos de tablas */
+     .barra-menu{
+        background: #ebe9e9 0% 0% no-repeat padding-box;
+        opacity: 0.72;
+     }
+     .panel-busqueda{
+        width: 100%;
+        height: 100px;
+        margin-left: 1px;
+        margin-right: 1px;
+        background: #d4d3d3 0% 0% no-repeat padding-box;
+        
+     }
+     .redondeadonorelieve-tablas{
+        margin-left:  50px;
+        width: 50px;
+        margin-top: 9px;
+        padding: 3px;
+        border-radius: 15px;
+        border: 1px solid #39c;
+     }
+
+     .tabla-responsive{
+         width: 80%;
+         margin-left: 10%;
+         padding: 20px;
+     }
+     .imagen-vacante{
+        margin-top: 345px;
+        height: 175px;
+        width: 175px;
+     }
+     .input-tablas{
+         border-radius: 10px;
+         background-color: #635f5f;
+         color: white;
+     }
+     /* FIn de estilos de tablas */
+     /* Inicio pagina detalles*/
+     .panel-detalle{
+        width: 100%;
+        height: 100px;
+        margin-left: 1px;
+        margin-right: 1px;
+
+     }
+     .input-correo{
+         padding-top: 5px;
+         border-radius: 15px;
+     }
+     .input-round{
+         border-radius: 20px;
+         background-color: #CECECE;
+         border: 0px;
+     }
+
+     .round-back {
+        margin: 0 0 15px auto;
+        padding: 5px;
+        border-radius: 19px;
+           }
+      .card-description{
+          width: 500px;
+          border: #635f5f ;
+          height: 300px;
+      }
+      .general-description{
+        background: #848282 0% 0% no-repeat padding-box;
+        color: #fff;
+        border-radius: 15px;
+        opacity: 1;
+      }
+
+      .general-essential{
+        background: #030303 0% 0% no-repeat padding-box;
+        color: #fff;
+        border-radius: 15px;
+        opacity: 1;
+      }
+
+      .essential-postion{
+        margin-top: 65px;
+      }
+     /* Fin pagina detalles*/
+     /* Inicio formulario registro */
+     .for-login{
+        width: 503px;
+        height: 655px;
+        /* UI Properties */
+        background: #E4E4E4 0% 0% no-repeat padding-box;
+        box-shadow: 10px 15px 20px #00000029;
+        border-radius: 46px;
+        opacity: 1;
+     }
+     .sing-in{
+        letter-spacing: var(--unnamed-character-spacing-0);
+        text-align: left;
+        font: italic normal bold 19px/24px Open Sans;
+        letter-spacing: 0px;
+        color: #707070;
+        opacity: 1;
+     }
+     .account{
+         margin-top: 30px;
+        font: var(--unnamed-font-style-normal) normal 600 13px/18px Open Sans;
+        color: var(--unnamed-color-000000);
+        text-align: left;
+        font: normal normal 600 13px/18px Open Sans;
+        letter-spacing: 0.26px;
+        color: #000000;
+        opacity: 1;
+     }
+
+    .email-address{
+        margin-top: 30px;
+        color: var(--unnamed-color-000000);
+        text-align: left;
+        font: italic normal 300 13px/18px Open Sans;
+        letter-spacing: 0.25px;
+        color: #000000;
+        opacity: 1;
+    }
+    .user{
+      font: var(--unnamed-font-style-normal) normal bold 13px/18px Open Sans;
+      color: var(--unnamed-color-000000);
+      text-align: left;
+      font: normal normal bold 13px/18px Open Sans;
+      letter-spacing: 0.39px;
+      color: #000000;
+      opacity: 1;
+    }
+
+    .email-address-label{
+    height: 18px;
+    /* UI Properties */
+    font: var(--unnamed-font-style-normal) normal bold 13px/18px Open Sans;
+    color: var(--unnamed-color-000000);
+    text-align: left;
+    font: normal normal bold 13px/18px Open Sans;
+    letter-spacing: 0.39px;
+    color: #000000;
+    opacity: 1;
+    }
+
+    .row-email{
+      margin-top: 90px;
+    }
+
+    .input-email-registro{
+      width: 347px;
+      height: 36px;
+      /* UI Properties */
+      background: #FFFCFC 0% 0% no-repeat padding-box;
+      border-radius: 18px;
+      opacity: 1;
+      border: #FFFFFF;
+    }
+
+    .password-label{
+      height: 18px;
+      /* UI Properties */
+      font: var(--unnamed-font-style-normal) normal bold 13px/18px Open Sans;
+      color: var(--unnamed-color-000000);
+      text-align: left;
+      font: normal normal bold 13px/18px Open Sans;
+      letter-spacing: 0.39px;
+      color: #000000;
+      opacity: 1;
+    }
+    .input-password-registro {
+      margin-top: 12px;
+    }
+
+    .input-pass-registro{
+      width: 236 px;
+      height: 36px;
+      /* UI Properties */
+      background: #FFFCFC 0% 0% no-repeat padding-box;
+      border-radius: 18px;
+      opacity: 1;
+      border: #FFFFFF;
+    }
+    .sing-in-button{
+      margin-top: 20px;
+      width: 189px;
+      height: 44px;
+      /* UI Properties */
+      background: var(--unnamed-color-000000) 0% 0% no-repeat padding-box;
+      background: #000000 0% 0% no-repeat padding-box;
+      border-radius: 22px;
+      opacity: 1;
+    }
+
+    .text-buttom{
+    height: 18px;
+    font: var(--unnamed-font-style-normal) normal bold 13px/18px Open Sans;
+    text-align: left;
+    font: normal normal bold 13px/18px Open Sans;
+    letter-spacing: 0.39px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    opacity: 1;
+    }
+
+    .forgot-password-label{
+      margin-top: 30px;
+    }
+
+    .Not-registered-user{
+      margin-top: 60px;
+      height: 18px;
+      /* UI Properties */
+      color: var(--unnamed-color-000000);
+      text-align: left;
+      font: italic normal bold 13px/18px Open Sans;
+      letter-spacing: 0.25px;
+      color: #000000;
+      opacity: 1;
+
+    }
+    .create-an-account-button{
+      margin-top: 30px;
+      height: 28px;
+      /* UI Properties */
+      border: 1px solid var(--unnamed-color-000000);
+      border: 1px solid #000000;
+      border-radius: 14px;
+      opacity: 1;
+      color: var(--unnamed-color-000000);
+      text-align: left;
+      font: italic normal bold 13px/18px Open Sans;
+      letter-spacing: 0.25px;
+      color: #000000;
+    }
+     /* Fin formulario registro */
+
+     /* Inicio create */
+     .create-an-account{
+      height: 26px;
+      /* UI Properties */
+      letter-spacing: var(--unnamed-character-spacing-0);
+      color: var(--unnamed-color-000000);
+      text-align: left;
+      font: italic normal bold 19px/24px Open Sans;
+      letter-spacing: 0px;
+      color: #000000;
+      opacity: 1;
+     }
+     .registered{
+      height: 12px;
+      font: var(--unnamed-font-style-normal) normal 600 13px/18px Open Sans;
+      color: var(--unnamed-color-000000);
+   
+      font: normal normal 600 10px/18px Open Sans;
+      letter-spacing: 0.26px;
+      color: #000000;
+      opacity: 1;
+     }
+
+     .in-login{
+      width: 137px;
+      height: 32px;
+      border: 1px solid var(--unnamed-color-000000);
+      border: 1px solid #000000;
+      border-radius: 14px;
+      opacity: 1;
+     }
+
+     .for-create{
+      width: 563px;
+      height: 715px;
+      /* UI Properties */
+      background: #E4E4E4 0% 0% no-repeat padding-box;
+      box-shadow: 10px 15px 20px #00000029;
+      border-radius: 46px;
+      opacity: 1;
+   }
+
+   .cuadro{
+    width: 236px;
+    height: 131px;
+    background: #FFFCFC 0% 0% no-repeat padding-box;
+    border-radius: 15px;
+    opacity: 1;
+    color: var(--unnamed-color-000000);
+    text-align: left;
+    font: italic normal 300 10px/14px Open Sans;
+    letter-spacing: -0.1px;
+    color: #000000;
+    opacity: 1;
+   }
+
+   .form-profile{
+    margin-top: 30px;
+    width: 900PX;
+    box-shadow: 8px 8px 6px #00000029;
+    opacity: 1;
+   }
+
+   .share{
+     margin-top: 30px;
+     margin-right: 20px;
+    height: 21px;
+    /* UI Properties */
+    font: var(--unnamed-font-style-normal) normal bold 13px/18px Open Sans;
+    text-align: left;
+    font: normal normal bold 13px/18px Open Sans;
+    letter-spacing: 1.16px;
+    color: #A61414;
+    opacity: 1;
+   }
+
+     /* Fin create */
+     /* Inicion INFORMACION */
+     .input-rounded{
+       border-radius: 20px;
+     }
+     /* Fin informacion */
+     /* @import '~ngx-sharebuttons/button/themes/default'; */

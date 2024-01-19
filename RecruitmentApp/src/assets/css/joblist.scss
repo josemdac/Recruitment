@@ -1,0 +1,54 @@
+app-layout[route^="/joblist"], app-layout[route^="/top10"]{
+    font-size: 1rem;
+    .frow1.row {display: none;}
+
+    .social.desktop {right: auto;bottom: .2em;top: auto;}
+
+    app-site-footer {
+        height: 80px;
+        background: var(--footersmallcolor); 
+        color: var(--footersmallfontcolor) !important;
+        app-nav-item a.link-btn {
+            color: var(--footersmallfontcolor) !important;
+        }
+        .social button svg {
+            color: var(--footersmallfontcolor) !important;
+        }
+    }
+
+    .site-content {min-height: calc(100vh - 80px - 80px);}
+
+    .powered {bottom: 0.2em !important;}
+
+    .frow2.row {height: 100%;bottom: 0;}
+
+    button.add-doc {float: right;background: transparent;
+        border: none;outline: none;color: var(--tabheaderfontcolor);}
+
+}
+
+app-job-list {width: 100%;padding: 2em; padding-top: 0;
+    .k-grid{
+        font-size: 1rem !important;
+    }
+}
+
+app-job-search-bar .row {
+    padding: .2em;
+    form-input:first-child > div{
+        padding-right: 1em !important;
+        width: calc(100% / 4) !important;
+    }
+    form-input:nth-child(2) > div{
+        padding-left: .5em !important;
+            margin-left: -1em
+        
+    }
+    form-input:nth-child(3) > div{
+        padding-left: 1em !important;
+            margin-left: -1em;
+        width: calc(100% / 4 + 1.7em)
+    }
+
+
+}

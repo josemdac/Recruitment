@@ -1,0 +1,58 @@
+<kendo-grid
+    [data]="userlangs"
+    (edit)="editHandler($event)"
+    (remove)="removeHandler($event.dataItem)"
+    (cancel)="cancelHandler($event)"
+    style="max-height: 300px"
+>
+<kendo-grid-command-column [width]="100">
+    <ng-template kendoGridCellTemplate let-isNew="isNew" let-dataItem="dataItem">
+        <button [disabled]="!loadedLangs" class="grid-btn" kendoGridEditCommand type="button" ><i class="fas fa-pencil"></i></button>
+        <button class="grid-btn" kendoGridRemoveCommand type="button"><i class="fas fa-trash-alt"></i></button>
+        <button  class="grid-btn" 
+          kendoGridSaveCommand type="button"
+          >{{ isNew ? 'ADD' : 'UPDATE' | translate }}</button>
+        
+    </ng-template>
+</kendo-grid-command-column>
+<kendo-grid-column [width]="180" 
+    field="language" [title]="'Language'| translate">
+    <ng-template kendoGridCellTemplate let-dataItem>
+        <span *ngIf="dataItem.language.isoLang">{{ dataItem.language.isoLang.nativeName }}
+            <span *ngIf="dataItem.language.isoLang.nativeName != dataItem.language.isoLang.name">({{dataItem.language.isoLang.name}})</span>
+        </span>
+    </ng-template>
+</kendo-grid-column>
+<kendo-grid-column [width]="180" 
+    field="readingProficiency" [title]="'ReadingProficiency'| translate">
+    <ng-template kendoGridCellTemplate let-dataItem>
+        {{ dataItem.readingProficiency | langProfDec }}
+    </ng-template>
+    </kendo-grid-column>
+<kendo-grid-column [width]="180" 
+    field="writtingProficiency" [title]="'WritingProficiency'| translate">
+    <ng-template kendoGridCellTemplate let-dataItem>
+        {{ dataItem.writingProficiency | langProfDec }}
+    </ng-template>
+</kendo-grid-column>
+<kendo-grid-column  [width]="180" 
+    field="speakingProficiency" [title]="'SpeakingProficiency'| translate">
+    <ng-template kendoGridCellTemplate let-dataItem>
+        {{ dataItem.speakingProficiency | langProfDec }}
+    </ng-template>
+</kendo-grid-column>
+
+</kendo-grid>
+
+<div class="container-fluid new-hist" *ngIf="showForm">
+    <div class="row">
+        <div class="form-head col-sm-12">
+            <span class="title">{{(!isNew?'AddLanguage':'EditLanguage') | translate}}</span>
+            <span class="close"><button (click)="closeForm($event)">X</button></span>
+        </div>
+        <form-input [field]="field" (valueChange)="changeHandler($event, field, formData)" 
+        [value]="formData[field.name]" 
+        [formData]="formData" *ngFor="let field of fields"></form-input>
+    </div>
+</div>
+

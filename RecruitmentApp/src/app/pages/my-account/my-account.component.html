@@ -1,0 +1,41 @@
+<div class="std-title mb-2">{{'MyAccount' | translate}}</div>
+<app-expand-tab-layout>
+    
+    <app-expand-tab name="profile" [label]="'Profile' | translate">
+        <app-profile-info></app-profile-info>
+    </app-expand-tab>
+    <app-expand-tab name="password" [label]="'Password' | translate">
+       <app-change-password></app-change-password>
+    </app-expand-tab>
+    <app-expand-tab #doctab name="docs" [label]="'Documents' | translate" [labeltpl]="labeltpl">
+        <ng-template #labeltpl>
+            <button class="add-doc" (click)="docs.addNew($event, doctab)">
+                <i class="fa fa-plus"></i></button>
+        </ng-template>
+        <app-user-docs #docs></app-user-docs>
+    </app-expand-tab>
+    <app-expand-tab name="jobsApplied" [label]="'JobsApplied' | translate">
+        <app-requested-positions></app-requested-positions>
+    </app-expand-tab>
+    <app-expand-tab #histtab name="employmentHistory" [label]="'EmploymentHistory' | translate" [labeltpl]="labeltpl1">
+        <ng-template #labeltpl1>
+            <button class="add-doc" (click)="hist.addNew($event,histtab)"><i class="fa fa-plus"></i></button>
+        </ng-template>
+        <app-employment-hist #hist></app-employment-hist>
+    </app-expand-tab>
+    <app-expand-tab #eductab name="education" [label]="'Education' | translate" [labeltpl]="labeltpl2">
+        <ng-template #labeltpl2>
+            <button class="add-doc" (click)="educ.addNew($event, eductab)">
+                <i class="fa fa-plus"></i></button>
+        </ng-template>
+        <app-user-education #educ></app-user-education>
+    </app-expand-tab>
+    <app-expand-tab #langsk name="languageSkills" [label]="'LanguageSkills' | translate"  [labeltpl]="labeltpl3">
+        <ng-template #labeltpl3>
+            <button class="add-doc" [disabled]="!lang.canAdd" (click)="lang.addNew($event, langsk)">
+                <i class="fa fa-plus"></i></button>
+        </ng-template>
+        <app-user-languages #lang></app-user-languages>
+    </app-expand-tab>
+</app-expand-tab-layout>
+<app-account-save></app-account-save>

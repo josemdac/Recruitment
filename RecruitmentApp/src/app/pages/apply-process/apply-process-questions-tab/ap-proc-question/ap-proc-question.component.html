@@ -1,0 +1,34 @@
+<div class="row question"  *ngIf="question">
+    
+    <form-input 
+        [field]="textField" 
+        (valueChange)="changeHandler($event, textField)" 
+        [value]="question.answers" 
+        *ngIf="textField && question.questionType =='T'"></form-input>
+
+    <form-input 
+        [field]="boolField" 
+        (valueChange)="changeHandler($event, boolField)" 
+        [value]="question.answers" 
+        *ngIf="boolField && question.questionType =='B'"></form-input>
+    <form-input 
+        [field]="sChoiceField" 
+        (valueChange)="changeHandler($event, sChoiceField)" 
+        [value]="question.answers" 
+        *ngIf="sChoiceField &&  question.questionType =='S'"></form-input>
+    <div class="col-sm-12" [style.padding-left]="'0.5em'" *ngIf="question.questionType=='M'" >
+        <label>
+            {{question.question}}
+        </label>
+        
+    </div>
+    <ul class="multiple-choice" [style.padding-left]="'0.1em'"
+    *ngIf="question.questionType =='M'">
+        <li class="choice" [style.display]="'block'" *ngFor="let choice of question.choices"><form-input 
+            [field]="getMChoiceField(choice)" 
+            *ngIf="fields.length" 
+            (valueChange)="changeHandler($event, getMChoiceField(choice))" 
+            [value]="getMChoiceValue(choice)" ></form-input></li>
+    </ul>
+</div>
+

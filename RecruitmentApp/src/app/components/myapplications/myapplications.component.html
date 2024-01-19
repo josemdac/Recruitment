@@ -1,0 +1,101 @@
+<!-- Top navigation -->
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+       
+    <a class="navbar-brand me-auto" href="#">RENOVA</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#"><i class="fas fa-globe"></i> Home</a>
+            </li>
+        
+        </ul>
+    </div>
+  
+  </nav>
+  
+  <!-- Sidebar navigation -->
+  <div class="container-fluid">
+    <div class="row">
+  
+      <nav class="col-md-2 d-md-block bg-light sidebar">
+        <div class="sidebar-sticky">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" routerLink="/dashboard">
+                <i class="fas fa-user"></i> &nbsp; <span class="password-label">User Profile  </span> 
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" routerLink="/application">
+                <i class="fas fa-file-search"></i> &nbsp; <span class="password-label">Job applications</span> 
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" routerLink="/myapplication">
+                <i class="far fa-ballot-check"></i> &nbsp; <span class="password-label">My job applications</span> 
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" routerLink="/upload">
+                <i class="fas fa-upload"></i> &nbsp; <span class="password-label">Upload your CV</span> 
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" routerLink="/graph">
+                <i class="far fa-chart-pie"></i> &nbsp; <span class="password-label">Applications</span> 
+              </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" routerLink="/smtp">
+                    <i class="far fa-envelope"></i>&nbsp; <span class="password-label">Email Configuration</span> 
+                </a>
+              </li>
+            <!-- Calling SignOut() Api from AuthService -->
+            <li class="nav-item">
+              <a class="nav-link" (click)="authService.SignOut()">
+                <i class="fas fa-sign-out-alt "></i> &nbsp; <span class="password-label">  Log out</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+  
+      <!-- Main content -->
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <div class="inner-adjust">
+  
+          <div class="pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2 ">Job Application Checklist</h1>
+          </div>
+
+          <table class="table">
+            <thead>
+              <tr>
+                
+                <th scope="col">Job title</th>
+                <th scope="col">Location</th>
+                <th scope="col">Department</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let art of articulos">
+            
+                  <td>{{art.descripcion}}</td>
+                  <td>{{art.location}}</td>
+                  <td>{{art.department}}</td>
+                   
+              </tr>
+           
+            </tbody>
+          </table>
+
+
+          
+        </div>
+      </main>
+  
+    </div>
+  </div>

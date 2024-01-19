@@ -1,0 +1,52 @@
+
+
+<div *ngIf="position" class="container">
+    <div class="row">
+        <div class="col-sm-12" style="    display: flex;
+        margin-bottom: 0.5em;     margin-top: 1em;">
+            <a [routerLink]="'/joblist'" class="back-btn" style="display: block; margin-left: auto;">{{'BackToList' | translate}} <i class="ml-2 fa-solid fa-circle-arrow-left"></i></a>
+        </div>
+        
+        <div class="col-sm-12" style="display: flex;
+        flex-direction: row;
+        justify-content: flex-end;">
+            <div style="    display: flex;
+            align-content: space-around;
+            align-items: center;
+            font-size: 1.1rem;">{{'ShareBy' | translate}}</div>
+            <share-button [theme]="'outline'"
+                [button]="'linkedin'"
+                [url]="url"
+                [autoSetMeta]="false"
+            ></share-button>
+            <share-button [theme]="'outline'"
+                [button]="'facebook'"
+                [autoSetMeta]="false"
+                [url]="url"
+
+            ></share-button>
+            <share-button [theme]="'outline'"
+                [button]="'twitter'"
+                [url]="url"
+                [autoSetMeta]="false"
+            ></share-button>
+            
+        </div>
+        <div class="col-sm">
+            <div *ngIf="position" class="std-title mb-2">{{position.positionDescription}}</div>
+            
+        </div>
+        <div class="col-sm-auto">
+            
+            <button class="btn main-btn d-block ml-auto" style="min-width: 12.5em; display: block; margin-left: auto" (click)="applyNow($event)">{{'ApplyNow' | translate}}</button>
+        </div>
+        <div class="col-sm-12">
+            {{'Location' | translate}}: {{position.locationProfile | profileDec}}
+        </div>
+        <div class="col-sm-12">
+            {{'Date' | translate}}: {{position.requestDate | date}}
+        </div>
+        <div class="detail" [innerContent]="detail">
+        </div>
+    </div>
+</div>

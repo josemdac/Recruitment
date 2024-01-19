@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30104.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RenovaHrEmploymentAPI", "RenovaHrEmploymentAPI\RenovaHrEmploymentAPI.csproj", "{8C6D29F1-328B-4B18-B987-AF57EA5C180A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RenovaCommon", "../../RenovaCommon/RenovaCommon.csproj", "{ABBA9FAF-1482-4B83-9405-F95EB2C6DA96}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C6D29F1-328B-4B18-B987-AF57EA5C180A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C6D29F1-328B-4B18-B987-AF57EA5C180A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C6D29F1-328B-4B18-B987-AF57EA5C180A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C6D29F1-328B-4B18-B987-AF57EA5C180A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABBA9FAF-1482-4B83-9405-F95EB2C6DA96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABBA9FAF-1482-4B83-9405-F95EB2C6DA96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABBA9FAF-1482-4B83-9405-F95EB2C6DA96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABBA9FAF-1482-4B83-9405-F95EB2C6DA96}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B4025895-6B1F-4F65-97A4-C8A58DB1C8FC}
+	EndGlobalSection
+EndGlobal

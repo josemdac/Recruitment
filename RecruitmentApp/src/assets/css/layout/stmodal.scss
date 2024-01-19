@@ -1,0 +1,24 @@
+
+.standard-modal .standard-header{
+    height: 3em;
+    line-height: 2em !important;
+    font-weight: normal;
+    line-height: 1.5;
+    font-size: 1.25rem;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    color: rgb(33, 37, 41);
+
+}
+.standard-modal kendo-taglist li {
+    width: fit-content !important;
+    display: flex !important;
+}
+
+.standard-modal .content{
+    height: fit-content !important;
+}
+
+.standard-modal .content {
+    cursor: text !important;
+}

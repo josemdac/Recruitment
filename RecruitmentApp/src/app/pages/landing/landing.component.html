@@ -1,0 +1,9 @@
+<div class="text1" defaultInfoField="text1"></div>
+<div class="find-job">
+ 
+    <input class="form-control" #kw type="text" placeholder="{{'ByKeyWord'|translate}}" />
+    <input class="form-control" #loc type="text" placeholder="{{'ByLocation'|translate}}" />
+    <button class="btn btn-primary main-btn" (click)="searchByKwLoc($event, kw.value, loc.value)" style="    min-width: 15em;
+    text-align: left;" >{{'JobSearch' | translate}}<span style="float: right;"><i class="far fa-search"></i></span></button>
+    
+</div>

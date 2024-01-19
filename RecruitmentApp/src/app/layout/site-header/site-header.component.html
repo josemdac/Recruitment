@@ -1,0 +1,64 @@
+<div style="width: 94%; color: white; display: block; ">
+    <div class="header-logo" appLogoImage (click)="clickLogo()"></div>
+</div>
+<div class="desktop" style="
+float: right;
+    text-align: right;
+    font-size: .8em;
+    width: fit-content;
+    display: flex;
+    padding-right: 1em;
+">
+
+    <a class="lang-btn" style="text-decoration: none !important;
+    color: var(--langbuttoncolor);
+    font-size: 2em;
+    cursor: pointer;
+    display: flex;
+    z-index: 100;
+    margin-top: auto;
+    margin-bottom: auto;" id="lang-btn" (click)="toggleLang($event)">
+        <i class="far fa-globe"></i><span style="font-size:.8rem; display: block; margin: auto; margin-left: .5em;">
+        {{ langButtonText }}
+        </span>
+    </a>
+</div>
+<div class="tablet lang" style="    float: right;
+text-align: right;
+font-size: .8em;
+width: 6%;
+display: flex;">
+
+    <a class="lang-btn" style="text-decoration: none !important;
+    color: white;
+    font-size: 2em;
+    cursor: pointer;
+    display: flex;
+    z-index: 100;
+    margin-top: auto;
+    margin-bottom: auto;" id="lang-btn" (click)="toggleLang($event)">
+        <i class="far fa-globe"></i><span style="font-size:.8rem; display: block; margin: auto; margin-left: .5em;">
+        {{ langButtonText }}
+        </span>
+    </a>
+</div>
+
+<div class="mobile lang" style="    float: right;
+text-align: right;
+font-size: .8em;
+width: 6%;
+display: flex;">
+
+    <a class="lang-btn" style="text-decoration: none !important;
+    color: white;
+    font-size: 2em;
+    cursor: pointer;
+    display: flex;
+    z-index: 100;
+    margin-top: auto;
+    margin-bottom: auto;" id="lang-btn" (click)="toggleLang($event)">
+        <i class="far fa-globe"></i><span style="font-size:.8rem; display: block; margin: auto; margin-left: .5em;">
+        {{ langButtonText }}
+        </span>
+    </a>
+</div>

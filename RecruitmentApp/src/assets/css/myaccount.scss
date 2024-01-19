@@ -1,0 +1,79 @@
+app-my-account {width: 100%;padding: 2em; padding-top: 0;}
+
+app-profile-info{
+    div#middleName label {
+        white-space: nowrap;
+    }
+}
+app-layout[route^="/myaccount"]{
+    
+    .frow1.row {display: none;}
+
+    .social.desktop {right: auto;bottom: .2em;top: auto;}
+
+    app-site-footer {height: 80px;
+        background: var(--footersmallcolor); 
+        color: var(--footersmallfontcolor) !important;
+        app-nav-item a.link-btn {
+            color: var(--footersmallfontcolor) !important;
+        }
+        .social button svg {
+            color: var(--footersmallfontcolor) !important;
+        }
+    }
+
+    .site-content {min-height: calc(100vh - 80px - 80px);}
+
+    .powered {bottom: 0.2em !important;}
+
+    .frow2.row {height: 100%;bottom: 0;}
+
+    button.add-doc {float: right;background: transparent;
+        border: none;outline: none;color: var(--tabheaderfontcolor);}
+
+}
+
+app-account-save {display: block;margin-left: auto;width: fit-content; button {min-width: 10em;}}
+
+app-change-password{
+    .passreqs span {margin-right: .5em;}
+}
+app-profile-info{
+    .field-title {
+        padding-left: .5em;
+        margin-top: .25em;
+        font-weight: 600;
+    }
+}
+app-pass-validation-stepper{
+    .steps {height: 20px; max-width: 400px;}
+    ul.def-check {font-size: .8rem;}
+    ul.def-check {display: flex;padding: 0;  flex-wrap: wrap;}
+
+    ul.def-check li {display: block;margin-right: .5em;}
+}
+
+app-user-docs{
+    button.btn.download-btn {/* height: 1.5em; *//* width: 1.5em; */font-size: .7em;padding: .2em; margin-left: 0.5em;}
+    
+    overflow-x: auto;
+    display: block;
+    
+    kendo-grid{
+        min-width: 600px;
+        
+    }
+}
+
+app-employment-hist{
+    form-input #currentJob {display: block;}
+
+    form-input #currentJob label {width: 100%;}
+}
+@media (max-width: 600px) {
+    .container-fluid{
+        .row{
+            display: block;
+        }
+    }
+}

@@ -1,0 +1,18 @@
+<app-site-header *ngIf="!isIM"></app-site-header>
+<app-site-nav *ngIf="!isIM"></app-site-nav>
+<!-- <div class="stmodal-container" *ngIf="stModal.showModal" 
+    style="
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0">
+    <standard-modal *ngIf="stModal.showModal"></standard-modal>
+</div> -->
+
+<div class="site-content">
+    <ng-content></ng-content>
+</div>
+
+<button *ngIf="showGoTop" class="gotop-btn" (click)="goToTop($event)"><i class="fas fa-arrow-up"></i></button>
+<app-site-footer  *ngIf="!isIM"></app-site-footer>

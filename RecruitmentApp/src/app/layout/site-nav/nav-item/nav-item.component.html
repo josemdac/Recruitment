@@ -1,0 +1,8 @@
+<a class="link-btn {{isActive?'active':''}}"  (click)="link.onClick($event)">{{link.label | translate}}</a>
+<ul class="children">
+    <li class="nav-item" *ngFor="let child of link.children">
+        <app-nav-item [link]="child"></app-nav-item>
+    </li>
+</ul>
+
+

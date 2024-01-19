@@ -1,0 +1,68 @@
+<div class="login-modal" *ngIf="showLogin">
+    <form #form="ngForm" style="
+        height: var(--loginheight);
+        width: 800px;
+        display: block;
+        margin: auto;" (submit)="onSubmit($event)" >
+
+      <div class="row h-100" style="border: 1px solid #696969; background: white; position: relative;" >
+        <div class="col-12 header">
+            <div appLogoImage class="header-logo"></div>
+           
+        </div>
+        
+
+      
+        <div class="col d-block m-auto login-content"> 
+            
+              <div class="form-group" id="pdwDiv" style="position: relative;">
+                  <label class="uppercase" for="userPassword" style="font-size: .8em;"><span class="{{lang}}-password"></span></label>
+                  
+                  <input [disabled]="loginState.attempts > 10" name="username" #password (focus)="onFocus($event);" class="form-control login-textbox en-password-placeholder passfield" type="text" id="userPassword" name="userPassword" #userPassword="ngModel" [value]="loginState.password" 
+                  [(ngModel)]="loginState.password" autocomplete="off" 
+                  [placeholder]="'Password' | translate" required />
+                  <span class="login-input-icon"><i class="fas fa-lock"></i></span>
+                  <span style="cursor: pointer;" class="toggle-password"
+                  (touchstart)="password.classList.remove('passfield')"  
+                  (mousedown)="password.classList.remove('passfield')" 
+                  (mouseup)="password.classList.add('passfield')" 
+                  (touchend)="password.classList.add('passfield')" 
+                  (mouseleave)="password.classList.add('passfield')"><i class="fas fa-eye"></i></span>
+                  
+                
+            </div>
+            
+
+            <!-- <div id="captchaDiv" style="width:350px;text-align:center; border-style: none; background-color: white;">
+              <re-captcha theme="dark-light" #captcha [(ngModel)]="loginService.login.captcha" name="captcha" required></re-captcha>
+            </div> -->
+
+            
+
+            <div class="w-100" style="display: flex; padding: 1em;    justify-content: center;
+            flex-wrap: nowrap;
+            align-items: center;
+            align-content: stretch;">
+                <button class="btn main-btn " id="btnLogin" 
+                type="submit"
+                [disabled]="!form.valid" >
+                    <span *ngIf="loginState.loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    <span>{{'Login' | translate}}</span>
+                </button>
+               
+            </div>
+           
+
+            
+            <div class="w-100" style="word-break: break-word; font-size: .8em;
+            margin-top: 3em;
+            display: block;
+            margin-bottom: -2em;" *ngIf="loginState.error">
+                <span  style="color: red;">{{loginState.error | translate}}</span>
+                
+            </div>
+
+        </div>
+        </div>
+	</form>
+</div>

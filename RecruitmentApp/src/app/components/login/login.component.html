@@ -1,0 +1,114 @@
+<div class="login-modal" [style.display]="authSession.showLogin?'':'none'">
+    <form #form="ngForm" *ngIf="!loginState.resetPass"
+        style="
+        height: var(--loginheight);
+        width: 800px;
+        display: block;
+        margin: auto;" (submit)="onSubmit($event)" >
+
+      <div class="row h-100" style="border: 1px solid #696969; background: white; position: relative;" >
+        <div class="col-12 header">
+            <div  appLogoImage class="header-logo" (click)="clickLogo()"></div>
+            <div class="close-login" (click)="closeClick($event)"><i class="far fa-times"></i></div>
+        </div>
+        
+
+      
+        <div class="col d-block m-auto login-content"> 
+            <div class="form-group" id="userDiv" style="position: relative;">
+                <label class="uppercase" for="userName" style="font-size: .8em;"><span class="{{lang}}-username"></span></label>
+                <input class="form-control login-textbox en-user-placeholder"
+                 type="text" id="userName" name="userName" #userName="ngModel" 
+                [value]="loginState.user" [(ngModel)]="loginState.user" 
+                [placeholder]="'Username'|translate" required >
+                <span class="login-input-icon"><i class="fas fa-user"></i></span>
+              </div>
+              <div class="form-group" id="pdwDiv" style="position: relative;">
+                  <label class="uppercase" for="userPassword" style="font-size: .8em;"><span class="{{lang}}-password"></span></label>
+                  
+                  <input [disabled]="loginState.attempts > 10" name="username" #password (focus)="onFocus($event);" 
+                  class="form-control login-textbox en-password-placeholder passfield" type="password" id="userPassword" name="userPassword" #userPassword="ngModel" [value]="loginState.password" 
+                  [(ngModel)]="loginState.password" autocomplete="off" formInputPassword 
+                  [placeholder]="'Password' | translate" required />
+                  <span class="login-input-icon"><i class="fas fa-lock"></i></span>
+                  <!-- <span style="cursor: pointer;" class="toggle-password"
+                  (touchstart)="password.classList.remove('passfield')"  
+                  (mousedown)="password.classList.remove('passfield')" 
+                  (mouseup)="password.classList.add('passfield')" 
+                  (touchend)="password.classList.add('passfield')" 
+                  (mouseleave)="password.classList.add('passfield')"><i class="fas fa-eye"></i></span> -->
+                  
+                  
+                    <div class="captcha-text" *ngIf="lang == 'en'">
+                    This site is protected by reCAPTCHA and the Google
+                    <a target="_blank"  href="https://policies.google.com/privacy">Privacy Policy</a> and
+                    <a target="_blank"  href="https://policies.google.com/terms">Terms of Service</a> apply.</div>
+
+                    <div class="captcha-text" *ngIf="lang == 'es'">
+                    Este sitio está protegido por reCAPTCHA y la 
+                    <a target="_blank" href="https://policies.google.com/privacy?hl=es">Política de Privacidad</a> de Google. Se aplican 
+                    <a target="_blank"  href="https://policies.google.com/terms?hl=es">Términos de Servicio</a>.</div>
+
+                    
+            </div>
+            
+
+            <!-- <div id="captchaDiv" style="width:350px;text-align:center; border-style: none; background-color: white;">
+              <re-captcha theme="dark-light" #captcha [(ngModel)]="loginService.login.captcha" name="captcha" required></re-captcha>
+            </div> -->
+
+            
+
+            <div class="w-100" style="display: flex; padding: 1em;    justify-content: center;
+            flex-wrap: nowrap;
+            align-items: center;
+            align-content: stretch;">
+                <button class="btn main-btn " id="btnLogin" 
+                type="submit"
+                [disabled]="!form.valid" >
+                    <span *ngIf="loginState.loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    <span>{{'Login' | translate}}</span>
+                </button>
+                <a class="forgot-pass" (click)="forgotPassword($event)" >
+                    {{'ForgotPassword' | translate}}
+                </a>
+                
+            </div>
+            <div class="w-100" style="display: block;
+            margin-top: 2em;
+            margin-bottom: 1em;
+            font-size: .8rem;">
+                <div class="" style="font-weight: 700;">{{ 'NotRegisteredYet' | translate }}</div>
+                <div class="" appCreateAccountLink>
+                </div>
+                
+                
+            </div>
+
+            <div class="social-login">
+                <div>{{'SignInUsing' | translate}}</div>
+                <ul class="options">
+                    <li><a appLoginGoogle ></a></li>
+                    <li><a appLoginMicrosoft ></a></li>
+                    <li><a appLoginLinkedIn ></a></li>
+                    <li><a appLoginFacebook ></a></li>
+                    <li><a appLoginTwitter ></a></li>
+                </ul>
+
+            </div>
+            <div class="w-100" style="word-break: break-word; font-size: .8em;
+            margin-top: 3em;
+            display: block;
+            margin-bottom: -2em;" *ngIf="loginState.error">
+                <span  style="color: red;">{{loginState.error | translate}}</span>
+                
+            </div>
+
+        </div>
+        </div>
+	</form>
+
+
+    <app-reset-password (close)="closeClick($event) " 
+    (back)="loginState.resetPass = false" *ngIf="loginState.resetPass"></app-reset-password>
+</div>

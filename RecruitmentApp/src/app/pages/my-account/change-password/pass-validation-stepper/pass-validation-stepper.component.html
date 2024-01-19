@@ -1,0 +1,7 @@
+
+<div class="steps" [style.background]="colorRange[state.invalidReqs.length]">
+    <div *ngFor="let step of state.invalidReqs" [attr.step]="step"></div>
+</div>
+<ul class="def-check">
+    <li class="def" *ngFor="let def of defMatch" >{{def}}</li>
+</ul>

@@ -1,0 +1,8 @@
+<div class="container-fluid p-0">
+    <div class="row">
+        <form-input class="{{ field.type != 'multiselect'?'search-input':''}}" [field]="field" 
+        *ngFor="let field of fields" [value]="formData[field.name]"
+        (keyUp)="keyUpField($event, field)"
+        (valueChange)="changeField($event, field)"></form-input>
+    </div>
+</div>

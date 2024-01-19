@@ -1,0 +1,58 @@
+
+
+
+<div class="container new-doc" >
+    <div class="row">  
+        <div class="col-sm-12" style="display: flex;">
+            <button class="btn main-btn add-new" (click)="addNew($event)">
+                <i class="fas fa-plus mr-2"></i> {{'AddResume' | translate}} ({{'REQUIRED' | translate}})
+            </button>
+        </div>
+    
+        <div class="col-sm-12">
+            <kendo-grid
+                [data]="docs"
+                (remove)="removeHandler($event.dataItem)"
+                
+                style="max-height: 300px"
+            >
+            <kendo-grid-command-column [width]="130">
+                <ng-template kendoGridCellTemplate let-isNew="isNew" let-dataItem="dataItem">
+                    <!-- <button class="grid-btn" kendoGridEditCommand type="button" ><i class="fas fa-pencil"></i></button> -->
+                    <button class="grid-btn" kendoGridRemoveCommand type="button"><i class="fas fa-trash-alt"></i></button>
+                    <button  class="grid-btn" 
+                    kendoGridSaveCommand type="button"
+                    >{{ isNew ? 'ADD' : 'UPDATE' | translate }}</button>
+                    <button class="btn download-btn" *ngIf="dataItem.documentName" (click)="downloadDoc(dataItem)">
+                        <file-icon [set]="'classic'" [type]="'pdf'" [size]="'md'"></file-icon>
+                    </button>
+                    
+                </ng-template>
+            </kendo-grid-command-column>
+            <kendo-grid-column field="documentTitle" [title]="'DocumentTitle' | translate"></kendo-grid-column>
+            <kendo-grid-column field="documentName" [title]="'DocumentName' | translate"></kendo-grid-column>
+            <kendo-grid-column field="documentType" [title]="'Type'| translate">
+                <ng-template kendoGridCellTemplate let-dataItem>
+                    {{ dataItem.documentType | docType }}
+                </ng-template>
+            </kendo-grid-column>
+
+
+            </kendo-grid>
+
+        </div>
+    </div>
+    <div class="row" *ngIf="showForm">
+        <div class="form-head col-sm-12">
+            <span class="title">{{(!isNew?'AddDocument':'EditDocument') | translate}}</span>
+            <span class="close"><button (click)="closeForm($event)"><i class="fas fa-x"></i></button></span>
+        </div>
+        <form-input [field]="field" (valueChange)="changeHandler($event, field, formData)" [value]="formData[field.name]" 
+        [formData]="formData" *ngFor="let field of fields"></form-input>
+        <div class="col-sm-12">
+            <button class="btn main-btn btn-save" (click)="saveDocument($event)" style="display: block;">
+                {{'Save' | translate }}
+            </button>
+        </div>
+    </div>
+</div>

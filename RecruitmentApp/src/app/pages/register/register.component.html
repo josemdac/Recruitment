@@ -1,0 +1,77 @@
+<div class="container">
+    <div class="row" *ngIf="!registered">
+        <div class="col-sm-12" style="padding-left: 0.5em;">
+            <div class="std-title mb-2">{{'Register' | translate}}</div>
+        </div>
+        <form-input [field]="field" (valueChange)="changeHandler($event, field)" [value]="formData[field.name]" 
+        [formData]="formData" *ngFor="let field of fU1"></form-input>
+        <div class="col-sm-9" style="color: red; padding-top: 2.4em;">
+            {{fU1[0].valid === false?('AlreadyExistOrInvalid' | translate):''}}
+        </div>
+        <form-input [field]="field" (valueChange)="changeHandler($event, field)" [value]="formData[field.name]" 
+        [formData]="formData" *ngFor="let field of fU11"></form-input>
+        <div class="col-sm-9" style="color: red; padding-top: 2.4em;">
+            {{fU11[0].valid === false?('EmailMissmatch' | translate):''}}
+        </div>
+
+        <!-- Password -->
+       
+        <form-input [field]="field" [value]="formData[field.name]" 
+        (valueChange)="changePassHandler($event, field.name)" (keyUp)="keyUpPass($event, field.name)"
+        [formData]="formData" *ngFor="let field of f1"></form-input>
+
+        <div class="col-sm-9" style="padding-top: 2em">
+            <app-pass-validation-stepper
+            *ngIf="sdef" #stepper
+                [startColor]="'rgb(241,90,64)'"
+                [endColor]="'rgb(168,255,157)'"
+                [username]="formData.userName"
+                [password]="formData.password"
+                [def]="sdef"
+            ></app-pass-validation-stepper>
+        </div>
+
+        <form-input [field]="field" [value]="formData[field.name]" 
+        (valueChange)="changePassHandler($event, field.name)" (keyUp)="keyUpPass($event, field.name)"
+        [formData]="formData" *ngFor="let field of f2"></form-input>
+        <div class="col-sm-9" style="color: red; padding-top: 2.4em;">
+            {{f2[0].valid === false?('PasswordsMissmatch' | translate):''}}
+            <div *ngIf="passreqMsg" >
+                {{('PasswordReqFailed' | translate)}}
+            </div>
+        </div>
+        <div class="col-sm-12" #reqs>
+
+        </div>
+
+        <div class="col-sm-12 mt-2" style="
+        margin-top: 1em !important;
+        padding-left: 0.5em;">
+            <div class="std-subtitle">{{'PersonalInfo' | translate}}</div>
+        </div>
+
+        <!-- End password -->
+        <form-input [field]="field" (valueChange)="changeHandler($event, field)" [value]="formData[field.name]" 
+        [formData]="formData" *ngFor="let field of fU2"></form-input>
+        <div class="col-sm-12" style="padding-right: 0;">
+            <button [disabled]="!canSave" (click)="saveUser($event)" class="btn main-btn" style="display: block; margin-left: auto">{{'Save' | translate}}</button>
+        </div>
+    </div>
+    <div class="row" *ngIf="registered">
+        <div class="col-sm-12" style="padding-left: 0.5em;">
+            <div class="std-title mb-2">{{'Register' | translate}}</div>
+        </div>
+        <div class="col-md-12" style="margin-top: 1em; padding-left: .5em">
+            <div>{{'WeSentEmailTo'| translate}}: {{formData.userName}}</div>
+            <div>{{'PleaseCheckYourInbox' | translate}}</div>
+            <div *ngIf="resent">{{'EmailResent' | translate}}</div>
+
+        </div>
+        <div class="col-md-12" style="padding-right: 0;">
+            <button class="btn main-btn" style="margin-left: auto;
+            display: block;" (click)="resend($event)">
+                {{'ResendEmail' | translate}}
+            </button>
+        </div>
+    </div>
+</div>

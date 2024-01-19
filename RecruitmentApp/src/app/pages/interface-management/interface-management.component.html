@@ -1,0 +1,84 @@
+<div 
+class="container-fluid" 
+style="height: 100%;padding: 2em; border: solid 1px #ccc;
+border-radius: 5px;">
+    <div class="row" style="height: 100%;">
+        <div class="col-sm-3 options-panel">
+            <app-interface-management-toggle></app-interface-management-toggle>
+            <app-interface-management-options></app-interface-management-options>
+        </div>
+        <div class="col-sm content">
+            <!--Preview-->
+            <div class="header" appIMHeader>
+                <div class="logo" appIMLogo></div>
+                <div class="lang">
+                    <a appIMLangButton>
+                        <i class="far fa-globe"></i><span style="font-size:.8rem; display: block; margin: auto; margin-left: .5em;">
+                        {{ 'LANGBUTTON' | translate}}
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="navbar" appIMNavbar>
+                <ul>
+                    <li appIMSelTab>{{'SelectedTab' | translate}}</li>
+                    <li appIMNormalTab>{{'NormalTab' | translate}}</li>
+                    <li appIMHoverTab>{{'HoverTab' | translate}}</li>
+                    
+                </ul>
+            </div>
+            <div class="title-sample std-title" appIMTitleSample>
+                {{'Title' | translate}}
+            </div>
+            
+            <div class="image-area" appImMainSiteImage>
+                {{'ImageArea' | translate}}
+            </div>
+            <div class="content-area" appIMContentArea>
+                                
+                {{'ContentArea' | translate}}
+            </div>
+            <div class="footer-small" appIMFooterSmall>
+                                
+                <div class="social desktop"  style="z-index: 1;">
+                    
+                   <fa-icon [icon]="linkedInIcon"></fa-icon>
+                   <fa-icon [icon]="facebookIcon"></fa-icon>
+                   <fa-icon [icon]="twitterIcon"></fa-icon>
+                   <fa-icon [icon]="instagramIcon"></fa-icon>
+                  
+
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="btn" appIMButton>{{'Button' | translate}}</button>
+                <button class="btn" appIMButton="2">{{'Button2' | translate}}</button>
+                <form-input [field]="sampleSwitchField" 
+                (valueChange)="sampleSwVal = $event"
+                [value]="sampleSwVal" appIMSwitchBackColor></form-input>
+                <app-expand-tab-layout appIMButton="3">
+    
+                    <app-expand-tab name="profile" [label]="'PanelTitle' | translate">
+                        {{'PanelContent' | translate}}
+                    </app-expand-tab>
+                </app-expand-tab-layout>
+            </div>
+            <div class="stepper-sample" appIMStepper style="    
+            display: flex;
+            margin-top: 1em;
+            justify-content: space-around;">
+                <kendo-stepper
+                class="std-stepper"
+                [currentStep]="2"
+                [steps]="stepperSteps"
+                stepType="full">
+                </kendo-stepper>
+            </div>
+        </div>
+    </div>
+    <app-imsave-button *ngIf="validSession"></app-imsave-button>
+</div>
+
+
+<app-imlogin *ngIf="!validSession && (!isToken || (isToken && !isIfr))"></app-imlogin>

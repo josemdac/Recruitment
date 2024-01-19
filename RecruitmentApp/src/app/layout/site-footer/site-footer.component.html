@@ -1,0 +1,154 @@
+<div class="powered"></div>
+
+<div class="social desktop"  style="z-index: 1;">
+    <share-button [theme]="'outline'"
+        [button]="'linkedin'"
+        [url]="url"
+        shareBtnCustom
+        *ngIf="linkedIn"
+        (customClick)="shareBtnClick($event, linkedIn)"
+        [autoSetMeta]="false"
+    ></share-button>
+    <share-button [theme]="'outline'"
+        [button]="'facebook'"
+        [url]="url"
+        shareBtnCustom
+        *ngIf="facebook"
+        (customClick)="shareBtnClick($event, facebook)"
+        [autoSetMeta]="false"
+    ></share-button>
+    <share-button [theme]="'outline'"
+        [button]="'twitter'"
+        [url]="url"
+        shareBtnCustom
+        *ngIf="twitter"
+        (customClick)="shareBtnClick($event, twitter)"
+        [autoSetMeta]="false"
+    ></share-button>
+    <button *ngIf="instagram" (click)="shareBtnClick($event, instagram)" type="button" style="
+    font-size: 1.6rem;
+    background: transparent;
+    border: none;
+    color: white;
+    height: fit-content !important;
+    margin-top: 0.4rem;
+    margin-left: 0.3rem;
+    " class="sb-wrapper sb-show-icon instagram" ><div class="sb-content">
+        <fa-icon [icon]="icon"></fa-icon>
+    </div></button>
+
+</div>
+
+<div class="container-fluid">
+    <div class="frow1 row">
+        <div class="info col-sm-12">
+            <div class="footer-text1" defaultInfoField="text2"></div>
+    
+        </div>
+       
+        <div class="col-sm-12 mobile d-flex" style="margin-top: 1em;">
+            <div class="social"  style="z-index: 1;">
+                <share-button [theme]="'outline'"
+                    [button]="'linkedin'"
+                    [url]="url"
+                    shareBtnCustom
+                    *ngIf="linkedIn"
+                    (customClick)="shareBtnClick($event, linkedIn)"
+                    [autoSetMeta]="false"
+                ></share-button>
+                <share-button [theme]="'outline'"
+                    [button]="'facebook'"
+                    [url]="url"
+                    shareBtnCustom
+                    *ngIf="facebook"
+                    (customClick)="shareBtnClick($event, facebook)"
+                    [autoSetMeta]="false"
+                ></share-button>
+                <share-button [theme]="'outline'"
+                    [button]="'twitter'"
+                    [url]="url"
+                    shareBtnCustom
+                    *ngIf="twitter"
+                    (customClick)="shareBtnClick($event, twitter)"
+                    [autoSetMeta]="false"
+                ></share-button>
+                <button (click)="shareBtnClick($event, instagram)" 
+                *ngIf="instagram"
+                type="button" style="
+                font-size: 1.6rem;
+                background: transparent;
+                border: none;
+                color: white;
+                height: fit-content !important;
+                margin-top: 0.4rem;
+                margin-left: 0.3rem;
+                " class="sb-wrapper sb-show-icon instagram" ><div class="sb-content">
+                    <fa-icon [icon]="icon"></fa-icon>
+                </div></button>
+
+            </div>
+        
+        </div>
+        <div class="col-sm-12 tablet d-flex" style="margin-top: 1em;">
+            <div class="social" style="z-index: 1;">
+                <share-button [theme]="'outline'"
+                    [button]="'linkedin'"
+                    [url]="url"
+                    shareBtnCustom
+                    *ngIf="linkedIn"
+                    (customClick)="shareBtnClick($event, linkedIn)"
+                    [autoSetMeta]="false"
+                ></share-button>
+                <share-button [theme]="'outline'"
+                    [button]="'facebook'"
+                    [url]="url"
+                    shareBtnCustom
+                    *ngIf="facebook"
+                    (customClick)="shareBtnClick($event, facebook)"
+                    [autoSetMeta]="false"
+                ></share-button>
+                <share-button [theme]="'outline'"
+                    [button]="'twitter'"
+                    [url]="url"
+                    shareBtnCustom
+                    *ngIf="twitter"
+                    (customClick)="shareBtnClick($event, twitter)"
+                    [autoSetMeta]="false"
+                ></share-button>
+                <button (click)="shareBtnClick($event, instagram)"
+                *ngIf="instagram"
+                type="button" style="
+                font-size: 1.6rem;
+                background: transparent;
+                border: none;
+                color: white;
+                height: fit-content !important;
+                margin-top: 0.4rem;
+                margin-left: 0.3rem;
+                " class="sb-wrapper sb-show-icon instagram" ><div class="sb-content">
+                    <fa-icon [icon]="icon"></fa-icon>
+                </div></button>
+
+            </div>
+        
+        </div>
+        <!-- <div class="contact col-sm-6">
+            <div class="title"  defaultInfoField="title3"></div>
+            <div class="text" defaultInfoField="text3"></div>
+            <input class="form-control" #email type="email" placeholder="{{'Email'|translate}}" />
+            <button class="btn btn-primary main-btn" (click)="register(email)" style="    min-width: 15em;
+            text-align: left;" >{{'Subscribe' | translate}}<span style="float: right;"><i class="far fa-arrow-alt-circle-right"></i></span></button>
+            
+        </div> -->
+    </div>
+   
+    <div class="frow2 row">
+        <ul style="display: flex;">
+            <li *ngFor="let link of links">
+                <app-nav-item [link]="link"></app-nav-item>
+            </li>
+        </ul>
+        <div class="footer-bottom" defaultInfoField="text3" ></div>
+    </div>
+    
+</div>

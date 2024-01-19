@@ -1,0 +1,50 @@
+app-site-header {
+    display: flex;position: fixed;height: $headerHeight !important;left: 0;right: 0;top: 0;
+    background-color: var(--maincolor); color: var(--mainfontcolor);
+    .header-logo {
+        height: 60px;margin-top: 10px;display: block;margin-bottom: 10px;margin-left: 10px;
+        
+        cursor: pointer;
+    }
+    .header-logo img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        object-position: left;
+    }
+}
+
+app-site-header {z-index: 3;}
+
+
+@media (min-width: 600px) {
+    
+}
+@media (max-width: 600px) {
+    .mobile.lang {position: fixed;left: 77vw;top: 22px;}
+
+    .mobile.lang a span {display: none !important;}
+    .site-content {min-height: auto;}
+
+
+}
+@media (max-height: 600px) {
+    .mobile.lang {position: fixed;left: 77vw;top: 22px;}
+
+    .mobile.lang a span {display: none !important;}
+    .site-content {min-height: auto;}
+
+}
+
+.tablet {display: none!important;}
+
+@media (max-height: 600px) and  (min-width: 600px){
+    .tablet {display: block !important;}
+    .tablet.lang {width: fit-content !important;position: absolute;right: 25px;top: 25px;}
+}
+
+@media (min-width: 768px) and (orientation: portrait){
+    .tablet{
+
+    }    
+}

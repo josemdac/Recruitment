@@ -1,0 +1,48 @@
+$navHeight : 50px;
+$headerHeight: 80px;
+$footerHeight: 300px;
+
+
+@import "./content.scss";
+@import "./footer.scss";
+@import "./header.scss";
+@import "./nav.scss";
+@import "./stmodal.scss";
+
+button.gotop-btn{
+    display: none;
+}
+@media (max-width: 600px) {
+    button.gotop-btn {
+        position: fixed;
+        bottom: 2em;
+        left: 2em;
+        z-index: 3;
+        background: var(--maincolor);
+        color:  var(--mainfontcolor);
+        border: none;
+        border-radius: 50%;
+        width: 2em;
+        height: 2em;
+        outline: none !important;
+        display: block;
+    }
+    
+}
+@media (max-height: 600px) {
+    button.gotop-btn {
+        position: fixed;
+        display: block;
+        bottom: 2em;
+        left: 2em;
+        z-index: 3;
+        background: var(--maincolor);
+        color:  var(--mainfontcolor);
+        border: none;
+        border-radius: 50%;
+        width: 2em;
+        height: 2em;
+        outline: none !important;
+    }
+    
+}

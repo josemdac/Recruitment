@@ -1,0 +1,14 @@
+<div class="std-title mb-2" *ngIf="!isTop10">{{'AvailablePositions' | translate}}</div>
+<div class="std-title mb-2" *ngIf="isTop10">{{'TopJobSearches' | translate}}</div>
+<div class="container-fluid p-0">
+
+    <div class="row">
+       
+        <div class="col-sm-12">
+            <app-job-search-bar *ngIf="!isTop10"></app-job-search-bar>
+        </div>
+        <div class="col-sm-12">
+            <app-job-results></app-job-results>
+        </div>
+    </div>
+</div>

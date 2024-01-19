@@ -1,0 +1,74 @@
+
+export interface HrRcrtCompanyConfiguration {
+    headerImage: string;
+    logoImage: string;
+    mainSiteImage: string;
+    ofccpRequired: string;
+    titlesColor: string;
+    buttonsColor: string;
+    buttonsHoverColor: string;
+    buttonsTextColor: string;
+    buttons2Color: string;
+    buttons2HoverColor: string;
+    buttons2TextColor: string;
+    buttons3Color: string;
+    buttons3HoverColor: string;
+    buttons3TextColor: string;
+    switchBackColor: string;
+    logoUrl: string;
+    emailText1: string;
+    emailText2: string;
+    headerBackgroundColor: string;
+    subheaderBackgroundColor: string;
+    selectedTabTextColor: string;
+    normalTabTextColor: string;
+    hoverTabBackground: string;
+    contentAreaBackgroundColor: string;
+    contentAreaTextColor: string;
+    homeImageText: string;
+    facebookLink: string;
+    instagramLink: string;
+    linkedinLink: string;
+    twitterLink: string;
+    sendResumeToEmail: string;
+    versionToShow: string;
+    requestSocialNetworks: string;
+    useCustomColors: string;
+    footerBackgroundColor: string;
+    footerTextColor: string;
+    stepperColor: string;
+    stepperFontColor: string;
+    siteName: string;
+    favicon: string;
+    privacyPolicy: string;
+    privacyPolicyEs: string;
+    [k:string]: any
+}
+
+export interface HrRcrtCompanyConfigurationColors {
+    titlesColor: string;
+    buttonsColor: string;
+    buttonsHoverColor: string;
+    headerBackgroundColor: string;
+    subheaderBackgroundColor: string;
+    selectedTabTextColor: string;
+    normalTabTextColor: string;
+    hoverTabBackground: string;
+    contentAreaBackgroundColor?: any;
+    contentAreaTextColor: string;
+    requestSocialNetworks?: any;
+    useCustomColors: string;
+    footerBackgroundColor: string;
+    footerTextColor: string;
+    buttonsTextColor: string;
+    buttons2Color: string;
+    buttons2HoverColor: string;
+    buttons2TextColor: string;
+    buttons3Color: string;
+    buttons3HoverColor: string;
+    buttons3TextColor: string;
+    stepperColor: string;
+    stepperFontColor: string;
+    langButtonColor: string;
+    switchBackColor: string;
+}

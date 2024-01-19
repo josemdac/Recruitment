@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row" *ngIf="isLoading">
+        <div class="col-sm-12" style="padding-left: 0.5em;">
+            <div class="std-title mb-2">{{'Activation' | translate}}</div>
+        </div>
+        <div class="col-md-12" style="margin-top: 1em; padding-left: .5em">
+            <div>{{'LOADING'| translate}}</div>
+
+        </div>
+       
+    </div>
+    <div class="row" *ngIf="activationError">
+        <div class="col-sm-12" style="padding-left: 0.5em;">
+            <div class="std-title mb-2">{{'Activation' | translate}}</div>
+        </div>
+        <div class="col-md-12" style="margin-top: 1em; padding-left: .5em">
+            <div>{{'ActivationError'| translate}}</div>
+            <div>{{error}}</div>
+
+        </div>
+    </div>
+    <div class="row" *ngIf="success">
+        <div class="col-sm-12" style="padding-left: 0.5em;">
+            <div class="std-title mb-2">{{'Activation' | translate}}</div>
+        </div>
+        <div class="col-md-12" style="margin-top: 1em; padding-left: .5em">
+            <div>{{'UserActivatedPleaseLogin'| translate}}</div>
+
+        </div>
+    </div>
+</div>

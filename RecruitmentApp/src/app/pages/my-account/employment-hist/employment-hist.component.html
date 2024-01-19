@@ -1,0 +1,45 @@
+<kendo-grid
+    [data]="histItems"
+    (edit)="editHandler($event)"
+    (remove)="removeHandler($event.dataItem)"
+    (cancel)="cancelHandler($event)"
+    style="max-height: 300px"
+>
+<kendo-grid-command-column [width]="100">
+    <ng-template kendoGridCellTemplate let-isNew="isNew" let-dataItem="dataItem">
+        <button class="grid-btn" kendoGridEditCommand type="button" ><i class="fas fa-pencil"></i></button>
+        <button class="grid-btn" kendoGridRemoveCommand type="button"><i class="fas fa-trash-alt"></i></button>
+        <button  class="grid-btn" 
+          kendoGridSaveCommand type="button"
+          >{{ isNew ? 'ADD' : 'UPDATE' | translate }}</button>
+       
+    </ng-template>
+</kendo-grid-command-column>
+<kendo-grid-column field="positionTitle" [width]="180" [title]="'POSITIONTITLE' | translate"></kendo-grid-column>
+<kendo-grid-column field="companyName" [width]="180" [title]="'COMPANYNAME' | translate"></kendo-grid-column>
+
+<kendo-grid-column class="text-right" headerClass="text-right" [width]="180" field="startDate" [title]="'STARTDATE'| translate">
+    <ng-template kendoGridCellTemplate let-dataItem>
+        {{ dataItem.startDate | date: 'shortDate' }}
+    </ng-template>
+</kendo-grid-column>
+
+<kendo-grid-column class="text-right" headerClass="text-right" [width]="180" field="endDate" [title]="'ENDDATE'| translate">
+    <ng-template kendoGridCellTemplate let-dataItem>
+        {{ dataItem.endDate | date: 'shortDate' }}
+    </ng-template>
+</kendo-grid-column>
+</kendo-grid>
+
+<div class="container-fluid new-hist" *ngIf="showForm">
+    <div class="row" >
+        <div class="form-head col-sm-12">
+            <span class="title">{{(!isNew?'AddEmploymentHistory':'EditEmploymentHistory') | translate}}</span>
+            <span class="close"><button (click)="closeForm($event)">X</button></span>
+        </div>
+        <form-input [field]="field" (valueChange)="changeHandler($event, field, formData)" 
+        [value]="formData[field.name]" [disabled]="getDisabledField(field)"
+        [formData]="formData" *ngFor="let field of fields"></form-input>
+    </div>
+</div>
+

@@ -1,0 +1,21 @@
+<div class="container-fluid">
+    <div class="row">
+        <form-input [field]="field" (valueChange)="changeHandler($event, field)" [value]="formData[field.name]" 
+        [formData]="formData" *ngFor="let field of f1"></form-input>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 field-title">{{'PostalAddress' | translate}}</div>
+        <form-input [field]="field" (valueChange)="changeHandler($event, field)" 
+        [value]="formData[field.name]" 
+        [formData]="formData" *ngFor="let field of postalAddr"></form-input>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 field-title" style="margin-top: 1em">{{'PhysicalAddress' | translate}}</div>
+        <form-input [field]="field" (valueChange)="changeHandler($event, field)" [value]="formData[field.name]" 
+        [formData]="formData" *ngFor="let field of physicAddr"></form-input>
+    </div>
+    <div class="row">
+        <form-input [field]="field" (valueChange)="changeHandler($event, field)" [value]="formData[field.name]" 
+        [formData]="formData" *ngFor="let field of f2"></form-input>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<ul style="display: flex;
+justify-content: space-evenly;
+margin-left: auto;
+margin-right: 1em;
+width: min-content;
+margin-top: auto;
+margin-bottom: auto !important;
+text-transform: uppercase;
+height: 100%;" class="tablet">
+    <li style="display: flex" class="nav-item" *ngFor="let link of links">
+        <app-nav-item [link]="link"></app-nav-item>
+    </li>
+</ul>
+
+<ul style="display: flex;
+justify-content: space-evenly;
+margin-left: auto;
+margin-right: 1em;
+width: min-content;
+margin-top: auto;
+margin-bottom: auto !important;
+text-transform: uppercase;
+height: 100%;" class="desktop">
+    <li style="display: flex" class="nav-item" *ngFor="let link of links">
+        <app-nav-item [link]="link"></app-nav-item>
+    </li>
+</ul>
+
+<button class="menu mobile" (click)="showMenu = !showMenu"><fa-icon [icon]="faBars"></fa-icon></button>
+<ul class="mobile" *ngIf="showMenu">
+    
+    <li style="display: flex" class="nav-item" *ngFor="let link of links">
+        <app-nav-item [link]="link"></app-nav-item>
+    </li>
+</ul>

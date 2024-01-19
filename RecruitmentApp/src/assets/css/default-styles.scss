@@ -1,0 +1,90 @@
+:root {
+    --btn-background: #2A6581;
+    --btn-background-hover: #dfa027;
+    /*--header-background: #EFEFEF;*/
+    --header-background: #F4F6F9;
+    --body-background: #F4F6F9;
+    --btn-new-background: #0bb2a5;
+    --btn-new-background-hover: #dfa027;
+    /*--btn-new-background: #516271;*/
+    --navyblue-renova: rgb(0, 59, 117);
+    --orange-renova: rgb(227, 83, 15);
+    --blue-renova: rgb(36, 76, 93);
+    --gold-renova: rgb(209, 144, 0);
+    --turquesa-renova: rgb(0, 191, 184);
+    --gray-renova: rgb(90, 102, 117);
+
+    /***/
+    // --maincolor: rgb(227, 83, 15);
+    --mainfontcolor: white;
+    --switchbtncolor: #0d6efd;
+    // --navcolor: #ffffffC0;
+    // --navhovercolor: rgba(227, 213, 15, 0.493);
+    // --navhoverfontcolor: rgb(227, 83, 15);
+    // --navselectedfontcolor: black;
+    // --navfontcolor: black;
+    // --footercolor: rgb(40,46,51);
+    // --loginbackground: rgb(40,46,51);
+    // --footerfontcolor: rgb(255, 255, 255);
+    // --footersmallcolor: rgb(74, 22, 78);
+    // --footersmallfontcolor: rgb(217, 255, 0);
+    //--landingbg: url('../img/group.jpg');
+    --companylogo: url('../img/logo_small_white.png');
+    //--loginbgimage:  url('../img/login-background.png');
+    --loginheight: 600px;
+     --linkcolor: blue;
+
+    // --buttonscolor: rgb(255, 255, 255);
+    // --buttonstextcolor: #222;
+    // --buttonshovercolor: rgb(255, 196, 0);
+
+    // --buttons2color: rgb(227, 83, 15);
+    // --buttons2textcolor: white;
+    // --buttons2hovercolor: rgb(255, 196, 0);
+
+    // /**StdTitle Color*/
+    // --stdtitlecolor: rgb(0, 59, 117);
+
+    // /**My Account*/
+    // --tabheaderbg: rgb(0, 59, 117);
+    // --tabheaderhoverbg: rgb(0, 59, 117);
+    // --tabheaderfontcolor: white;
+
+    // /**Apply process**/
+    // --steppercolor: rgb(0,59,117);
+    // --stepperfontcolor: #222;
+
+    /**Apply process next-back**/
+    --approcbuttoncolor: var(--buttonscolor)
+    --approcfontcolor: var(--buttonstextcolor);
+    --approchovercolor: var(--buttonshovercolor)
+
+}
+
+.footer-text1.en::before{
+    content: 'We do not discriminate base upon race,religion,color, national origin,gender (including pregnancy,childbirht, or related medical condicion), sexual orientation,gender identity, ender expression,age, status as protected veteran, status as an individual whit a disability, or other aplicable legally protected characteristics'
+}
+.footer-text2.en::before{
+    content: 'Our company is product to be a Equal Employment Opportunity and affirmative action employeer.'
+}
+
+.footer-text1.es::before{
+    content: 'No discriminamos por motivos de raza, religión, color, origen nacional, género (incluido el embarazo, el parto o una condición médica relacionada), orientación sexual, identidad de género, expresión de género, edad, estado como veterano protegido, estado como un persona con discapacidad, u otras características legalmente protegidas aplicables'
+}
+.footer-text2.es::before{
+    
+    content: 'Nuestra empresa es producto de ser un empleador de Igualdad de Oportunidades de Empleo y acción afirmativa.'
+}
+
+
+@import './controls.scss';
+@import './layout/layout.scss';
+@import './landing.scss';
+@import './login.scss';
+@import './myaccount.scss';
+@import './joblist.scss';
+@import './jobposition.scss';
+@import './register.scss';
+@import './apply-process.scss';
+@import './privacy.scss';
+@import './interface-management.scss';

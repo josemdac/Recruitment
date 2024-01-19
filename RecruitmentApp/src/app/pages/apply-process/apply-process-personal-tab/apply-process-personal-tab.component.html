@@ -1,0 +1,80 @@
+<div class="container">
+    
+    <div class="row">
+        <form-input [field]="field" (valueChange)="changeHandler($event, field)" [value]="proc.formData[field.name]" 
+        [formData]="proc.formData" *ngFor="let field of f1"></form-input>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 field-title">{{'PostalAddress' | translate}}</div>
+        <form-input [field]="field" (valueChange)="changeHandler($event, field)" [value]="proc.formData[field.name]" 
+        [formData]="proc.formData" *ngFor="let field of postalAddr"></form-input>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 field-title">{{'PhysicalAddress' | translate}}</div>
+        <form-input [field]="field" (valueChange)="changeHandler($event, field)" [value]="proc.formData[field.name]" 
+        [formData]="proc.formData" *ngFor="let field of physicAddr"></form-input>
+        
+    </div>
+    
+    <div class="row desktop">
+        <form-input [field]="field" class="{{field.av?'av-field':''}} {{field.name == 'availabilityTitle'?'field-title':''}}" 
+        (valueChange)="changeHandler($event, field)" [value]="proc.formData[field.name]" 
+        [formData]="proc.formData" *ngFor="let field of f2"></form-input>
+
+        <div class="col-sm-12" style="display: flex;
+        flex-direction: row-reverse;  margin-top: 0.25em;
+        justify-content: flex-end;">
+             <label style="margin-left: 0.5em;">{{'MorningShift' | translate}}</label>
+             <input class="form-check-input morning-shift"  [checked]="msChecked"
+             (change)="changeMorningShift($event)"
+             type="checkbox">
+            <span *ngIf="!validDays" class="availability-req">{{'AVAILABILITYREQUIRED' | translate}}</span>
+            <label style="margin-left: 0.5em;">{{'CheckAll' | translate}}</label>
+            <input  [checked]="allChecked" class="form-check-input  check-all" 
+            [indeterminate]="partialChecked"
+            (change)="changeAll($event)"
+            type="checkbox">
+            <div style="    margin-left: -0.25em;
+            margin-right: 2em;font-weight: 600;">{{'AVAILABILITYTITLE' | translate}}
+            <span class="ml-2" style="color: red">*</span>
+            </div>
+        </div>
+
+        <form-input [field]="field" class="{{field.av?'av-field':''}} {{field.name == 'availabilityTitle'?'field-title':''}}" 
+        (valueChange)="changeHandler($event, field)" [value]="proc.formData[field.name]" 
+        [formData]="proc.formData" *ngFor="let field of f3"></form-input>
+        
+    </div>
+    <div class="row mobile">
+
+        <div class="col-sm-12 row-1" style="display: flex;
+        flex-direction: row-reverse;   margin-top: 0.25em;
+        justify-content: flex-end;">
+
+            <div class="group">
+                <label class="ms-label" style="margin-left: 0.5em;">{{'MorningShift' | translate}}</label>
+                <input class="form-check-input morning-shift" [checked]="msChecked"
+                (change)="changeMorningShift($event)"
+                type="checkbox" />
+            </div>
+           
+            <div class="group"></div>
+             <span *ngIf="!validDays" class="availability-req">{{'AVAILABILITYREQUIRED' | translate}}</span>
+            <label  class="ca-label" style="margin-left: 0.5em;">{{'CheckAll' | translate}}</label>
+            <input  [checked]="allChecked" class="form-check-input  check-all" 
+            [indeterminate]="partialChecked"
+            (change)="changeAll($event)"
+            type="checkbox">
+            <div style="    margin-left: -0.25em;
+           margin-right: 2em;font-weight: 600;" >{{'AVAILABILITYTITLE' | translate}} 
+           <span class="ml-2 req-asterisk">*</span>
+            </div>
+
+
+        </div>
+        <form-input [field]="field" class="{{field.av?'av-field':''}} {{field.name == 'availabilityTitle'?'field-title':''}}" 
+        (valueChange)="changeHandler($event, field)" [value]="proc.formData[field.name]" 
+        [formData]="proc.formData" *ngFor="let field of mobile"></form-input>
+       
+    </div>
+</div>

@@ -1,0 +1,37 @@
+<kendo-grid
+    [data]="view"
+    [loading]="jobserv.loadingJobs"
+    #grid
+    [pageSize]="pageSize"
+     (dataStateChange)="dataStateChange($event)"
+     [skip]="jobserv.state.value.skip"
+      [pageable]="!isTop10"
+      [sortable]="!isTop10?{
+        allowUnsort: true,
+        mode: 'single'
+      }:false"
+
+>
+
+<kendo-grid-column field="positionDescription" [title]="'POSITIONTITLE' | translate" [width]="450">
+    <ng-template kendoGridCellTemplate let-dataItem>
+        <a *ngIf="!!dataItem" [appJobTv]="dataItem.requestId" class="position-link link-text"
+        [appIsAppliedJob]="dataItem" [routerLink]="'/jobposition/' + dataItem.requestId">
+            {{dataItem.positionDescription}}
+        </a>
+    </ng-template>
+</kendo-grid-column>
+
+<kendo-grid-column field="locationProfile" [title]="'LOCATION'| translate" [width]="450">
+    <ng-template kendoGridCellTemplate let-dataItem>
+        <span *ngIf="dataItem" [appProfileTypeCell]="dataItem" type="location"></span>
+    </ng-template>
+</kendo-grid-column>
+
+<kendo-grid-column field="jobTypeProfile" [title]="'JOBTYPE'| translate" [width]="300">
+    <ng-template kendoGridCellTemplate let-dataItem>
+        <span *ngIf="dataItem" [appProfileTypeCell]="dataItem" type="jobType"></span>
+    </ng-template>
+</kendo-grid-column>
+
+</kendo-grid>

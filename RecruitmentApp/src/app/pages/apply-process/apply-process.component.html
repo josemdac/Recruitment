@@ -1,0 +1,67 @@
+
+<!-- Header -->
+<div class="std-title" #title *ngIf="header">{{ header.positionDescription }}</div>
+<!-- Stepper -->
+<kendo-stepper
+      #stepper
+      [stepperHeight]="this"
+      class="std-stepper"
+      *ngIf="currentStep && loadedNew"
+      [steps]="stepperSteps"
+      stepType="full"
+      [currentStep]="current"
+      [linear]="false"
+      (activate)="activate($event)"
+      (currentStepChange)="stepChange($event)"
+     
+    >
+    </kendo-stepper>
+
+<ng-container *ngIf="currentStep && loadedNew" [ngTemplateOutlet]="currentStep.tpl"></ng-container>
+
+<!-- Tabs -->
+<ng-template appApplyProcessStep code="PERS" [validate]="perTab && perTab.validate" [label]="'Personal'| translate" iconClass="fas fa-user">
+    <app-apply-process-personal-tab #perTab [appSetElementHeight]="minHeight"></app-apply-process-personal-tab>
+</ng-template>
+
+<ng-template appApplyProcessStep code="DOCS" [validate]="docs && docs.validate" [label]="'Documents'| translate" iconClass="fas fa-file-lines">
+    <app-apply-process-documents-tab #docs [appSetElementHeight]="minHeight"></app-apply-process-documents-tab>
+</ng-template>
+<ng-template appApplyProcessStep code="QUES" [hidden]="noQuestions" [label]="'Questions'| translate" iconClass="fas fa-square-question">
+    <app-apply-process-questions-tab *ngIf="!noQuestions" #questions [appSetElementHeight]="minHeight"></app-apply-process-questions-tab>
+</ng-template>
+<ng-template appApplyProcessStep code="SUBM" [label]="'Send'| translate" iconClass="fas fa-paper-plane-top">
+    <div class="container" style="    
+    position: absolute;
+    top: 8em;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;">
+        <div class="row" style="
+        margin-top: auto;
+        margin-bottom: auto;
+        ">
+            <div class="col-sm-12">
+                <button class="btn main-btn btn-submit" (click)="saveApplicant($event)" style="display: block;">
+                    {{'SubmitJobReq' | translate }}
+                </button>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<div #buttons class="buttons" *ngIf="loadedNew">
+    <button (click)="stepChange(current - 1)" class="btn prev-btn main-btn" *ngIf="current > 0">{{'Back' | translate}}</button>
+    <button *ngIf="!isLastStep" [disabled]="nextDisabled" (click)="stepChange(current + 1)" class="btn next-btn main-btn">{{'Next' | translate}}</button>
+</div>
+
+
+<div class="already-submitted" *ngIf="loadedApplicant && proc.formData.applicantId">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-around;">
+        <span *ngIf="saved" style="margin-right: .5em" >{{'YourRequestHasBeenReceived' | translate}}</span>
+        <span *ngIf="!saved" style="margin-right: .5em" >{{'YouAlreadyAppliedForThisJob' | translate}}</span>
+        <a [routerLink]="'/joblist'" class="back-btn" style="display: block; margin-left: auto; margin-right: auto">{{'BackToList' | translate}} <i class="ml-2 fa-solid fa-circle-arrow-left"></i></a>
+    </div>
+</div>

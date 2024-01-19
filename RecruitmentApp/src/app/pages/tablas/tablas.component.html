@@ -1,0 +1,270 @@
+<body class="container-fluid ">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark" style="height: 78px; ">
+       
+            <a class="navbar-brand me-auto" [routerLink]="['/home']" >RENOVA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page"  [routerLink]="['/home']"><i class="fas fa-globe"></i> Home</a>
+                    </li>
+                
+                </ul>
+            </div>
+        
+    </nav>
+
+    <div class="body-image" style="height: 800px;">
+
+    <div class="d-flex justify-content-end barra-menu " >
+      <button type="button" class="btn" routerLink="/tablas" > <b>SEARCH JOBS </b> </button>
+      <button type="button" class="btn" routerLink="/register-user"> <b>JOIN OUR TALENT COMMUNITY</b> </button>
+      <button type="button" class="btn" routerLink="/sign-in"><b>LOGIN</b> </button>
+    </div> 
+
+      <div class=" container-fluid panel-busqueda "  >
+        <div class="row  ">
+          <div class="col-sm-10">
+            <input type="text" class="input-email-registro one " placeholder="Search Jobs by keyword" aria-label="Username" aria-describedby="basic-addon1" style="margin-top: 42px;margin-left: 370px;height: 25px;">
+            &nbsp;
+            <input type="text" class="input-email-registro one " placeholder="Search Jobs by keyword" aria-label="Username" aria-describedby="basic-addon1" style="margin-top: 5px; height: 25px;">
+          </div>
+          <div class="col-sm-2">
+            <button type="button" class="btn btn-dark round-buttom " > Search Jobs &nbsp;  <i class="fas fa-search"></i></button>
+          
+          </div>
+          <div class="d-flex justify-content-end  " >
+            <P class="" style="color: #A61414;font: normal normal bold 13px/18px Open Sans; margin-top: 20px; margin-right: 20px;"> SHARE </P>
+            <share-buttons theme="circles-dark"
+            [include]="[ 'linkedin', 'facebook','twitter']"
+            [showIcon]="true"
+            [showText]="false"
+            url="https://www.renovanowcloud.com/Renova/"
+            description="Optimize your business"
+           
+            >
+          </share-buttons>
+          </div> 
+
+          <div class="tabla-responsive " >
+            <br> <br>
+
+            <div class="row" >
+              <div class="col-sm-9">
+                <div class="row">
+                  <div class="col-sm-7">
+                    Results 1-25 of 127
+                  </div>
+                  <div class="col-sm-5">
+                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                  </div>
+                </div>
+                
+                
+                <table class="table caption-top table-borderless">
+                  <thead>
+                    <tr class="table-secondary text-center">
+                      <th scope="col">Job Title</th>
+                      <th scope="col">Location</th>
+                      <th scope="col">Department</th>
+                    </tr>
+                  </thead>
+                  <!-- <tbody>
+                    <tr class="table-dark">
+                      <td  ><input class="input-tablas" style="color: white; text-align: center;" type="text" value="Job Title"></td>
+                      <td ><input class="input-tablas" style="color: white; text-align: center;"  type="text" value="Location"></td>
+                      <td  ><input class="input-tablas" style="color: white; text-align: center;"  type="text" value="Department">&nbsp; <button class="btn btn-light btn-sm" routerLink="/detalle">Filter</button></td>
+                    </tr>
+                    <tr class="table-light">
+                      <td>Jacob</td>
+                      <td>Thornton</td>
+                      <td>@fat</td>
+                    </tr>
+                    <tr class="table-dark">
+                      <td>Larry</td>
+                      <td>the Bird</td>
+                      <td>@twitter</td>
+                    </tr>
+                    <tr class="table-light">
+                      <td>Larry</td>
+                      <td>the Bird</td>
+                      <td>@twitter</td>
+                    </tr>
+                    <tr class="table-dark">
+                      <td>Larry</td>
+                      <td>the Bird</td>
+                      <td>@twitter</td>
+                    </tr>
+                    <tr class="table-light">
+                      <td>Larry</td>
+                      <td>the Bird</td>
+                      <td>@twitter</td>
+                    </tr>
+                    <tr class="table-light">
+                      <td>Jacob</td>
+                      <td>Thornton</td>
+                      <td>@fat</td>
+                    </tr>
+                    <tr class="table-dark">
+                      <td>Larry</td>
+                      <td>the Bird</td>
+                      <td>@twitter</td>
+                    </tr>
+                    <tr class="table-light">
+                      <td>Larry</td>
+                      <td>the Bird</td>
+                      <td>@twitter</td>
+                    </tr>
+                    <tr class="table-dark">
+                      <td>Larry</td>
+                      <td>the Bird</td>
+                      <td>@twitter</td>
+                    </tr>
+                    <tr class="table-light">
+                      <td>Larry</td>
+                      <td>the Bird</td>
+                      <td>@twitter</td>
+                    </tr>
+                  </tbody> -->
+                  <tbody>
+                    <tr class="text-center " style="background-color: #000000;">
+                      <td><input class="input-tablas found" [(ngModel)]="term" type="text" placeholder="Job Title"></td>
+                      <td><input class="input-tablas found" [(ngModel)]="departmen" type="text" placeholder="Location"></td>
+                      <td><input class="input-tablas found" [(ngModel)]="location" type="text" placeholder="Department"> </td>
+                    </tr>
+                    <tr class="text-center " *ngFor="let post of posts |filter:term |filter:departmen |filter:location | paginate: { itemsPerPage: 10, currentPage: p }; index as i; let impar = odd;let tr = even;" [ngClass]="{azul:tr,verde:impar}"  (click)="mostrar(i)" >
+                      <td>{{ posts[i].positionDescription}}</td>
+                      <td>{{ posts[i].locationProfile.englishDescription}}</td>
+                      <td>{{ posts[i].expertiseProfile.spanishDescription}}
+                        &nbsp;
+                        <button type="button " class="btn btn-link link-danger btn-xs" data-bs-toggle="modal" data-bs-target="#modelId ">
+                          <i class="fal fa-eye" ></i>
+                      </button>
+                      </td>
+                    </tr>
+                  
+                  </tbody>
+                </table>
+
+                <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true" >
+  <div class="modal-dialog" style="max-width: 100% !important; height: 600px; " role="document" > 
+    <div class="modal-content"  >
+        <div class="modal-header">
+            <h5 class="modal-title">Job Details</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="tabla-responsive">
+
+            <div class="row ">
+              <div class="col-3">
+                <img src="assets/img/wavy1.png"  alt="">
+                <p>Are you ready for</p>
+                <p><h1>a rewarding career?</h1> 
+                <p>Over 7,200 men and women in Puerto Rico, Virgin Islands and the United States work at Popular.</p>
+                <p>Over 7,200 men and women in Puertoç Rico, Virgin Islands and the United States work at Popular.</p>
+                <p>Full time opportunitty!</p>
+              </div>
+              <div class="col-6">
+                <h4 class=""><i class="fas fa-clipboard-check" style="color:red"></i> Senior SofTware Developer</h4>
+                <p>Date: Mar 7</p>
+                <p>2022 Location: San Juan, PR</p>
+                <div class="card-description " >
+                  <div class="card" >
+                    <div class="card-body " style="overflow-y: scroll; height: 400px;">
+                      <h6 class="card-title general-description text-center" > <i class="fad fa-bookmark"></i> GENERAL DESCRIPTION</h6>
+                      
+                      <div *ngFor="let post of posts index as i; "   >
+                        <div  [innerHTML]="posts[i].positionDetailsSpanish" ></div>
+                        
+                      </div>
+                      
+                     
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="d-flex justify-content-end">
+                <button type="button" class="btn btn-primary btn-xs btn-danger round" style="width: 152px;">Apply Now <i class="fas fa-chevron-double-right"></i> </button>
+              </div>
+                <div class="card essential-postion" style="width: 400px;">
+                  <div class="card-body">
+                    <h6 class="card-subtitle general-essential text-center"> <i class="fad fa-bookmark"></i> ESSENTIAL DUTIES AND RESPONSIBILITIES</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
+          </div>
+
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  var modelId = document.getElementById('modelId');
+
+  modelId.addEventListener('show.bs.modal', function (event) {
+      // Button that triggered the modal
+      let button = event.relatedTarget;
+      // Extract info from data-bs-* attributes
+      let recipient = button.getAttribute('data-bs-whatever');
+
+    // Use above variables to manipulate the DOM
+  });
+</script>
+                
+              </div>
+              <div class="col-sm-3">
+                <img src="assets/img/vacante_Mesa de trabajo 1.png" class="imagen-vacante">
+              </div>
+            </div>
+
+            
+          </div>
+
+        </div>
+
+        <div class="row justify-content-center">
+       
+          <hr style="border-top: 1px solid rgb(5, 4, 4);">
+          <div class="col-8 ">
+           
+            <ul class="list-group list-group-horizontal-lg align-items-center justify-content-center">
+              <li class="list-group-item border-0">Renovasolutions.com</li>
+              <li class="list-group-item border-0">view All Jobs</li>
+              <li class="list-group-item border-0">Top Job Searches</li>
+              <li class="list-group-item border-0">Privacy Policy</li>
+            </ul>
+          </div>
+        </div>
+
+
+
+    </div>
+
+    
+
+  </div>
+
+    
+    
+   
+</body>

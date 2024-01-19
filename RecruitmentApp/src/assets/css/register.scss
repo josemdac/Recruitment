@@ -1,0 +1,35 @@
+app-layout[route^="/register"]{
+    .frow1.row {display: none;}
+
+    .social.desktop {right: auto;bottom: .2em;top: auto;}
+
+    app-site-footer {height: 80px;
+        background: var(--footersmallcolor); 
+        color: var(--footersmallfontcolor) !important;
+        app-nav-item a.link-btn {
+            color: var(--footersmallfontcolor) !important;
+        }
+        .social button svg {
+            color: var(--footersmallfontcolor) !important;
+        }
+    }
+
+    .site-content {min-height: calc(100vh - 80px - 80px);}
+
+    .powered {bottom: 0.2em !important;}
+
+    .frow2.row {height: 100%;bottom: 0;}
+
+    button.add-doc {float: right;background: transparent;
+        border: none;outline: none;color: var(--tabheaderfontcolor);}
+
+}
+
+app-register {
+    display: block;
+    width: 100%;
+    padding: 2em;
+    padding-top: 0;
+    .passreqs span {margin-right: .5em;}
+    
+}

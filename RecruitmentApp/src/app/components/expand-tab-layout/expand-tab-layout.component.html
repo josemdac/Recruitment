@@ -1,0 +1,16 @@
+
+<div class="controls">
+    <button (click)="expandAll($event)" class="btn expand"> 
+        <span class="mr-2"><i class="fa fa-plus-circle"></i></span>
+        {{'ExpandAll' | translate}}
+    </button>
+        
+    <button (click)="collapseAll($event)" class="btn collap"> 
+        <span class="mr-2"><i class="fa fa-minus-circle"></i></span>
+        {{'CollapseAll' | translate}}
+    </button>
+</div>
+
+<ul class="expand-tablist">
+    <ng-content></ng-content>
+</ul>

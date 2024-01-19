@@ -1,0 +1,152 @@
+<body class="container-fluid ">
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+       
+    <a class="navbar-brand me-auto" [routerLink]="['/home']" >RENOVA</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page"  [routerLink]="['/home']"><i class="fas fa-globe"></i> Home</a>
+            </li>
+        
+        </ul>
+    </div>
+
+</nav>
+
+<div class="d-flex justify-content-end barra-menu " >
+  <button type="button" class="btn" routerLink="/tablas" > <b>SEARCH JOBS </b> </button>
+  <button type="button" class="btn" routerLink="/register-user"> <b>JOIN OUR TALENT COMMUNITY</b> </button>
+  <button type="button" class="btn" routerLink="/sign-in"><b>LOGIN</b> </button>
+</div> 
+
+<div class="body-image-singin" style="height: 100%;">
+
+      <div class=" container-fluid ">
+        <div class="row  ">
+         
+        <!--   <div class="d-flex justify-content-end  " >
+            <P class="" style="color: #A61414;font: normal normal bold 13px/18px Open Sans; margin-top: 20px; margin-right: 20px;">SHARE </P>
+
+                  <share-buttons theme="circles-dark"
+                  [include]="[ 'linkedin', 'facebook','twitter']"
+                  [showIcon]="true"
+                  [showText]="false"
+                  url="https://www.renovanowcloud.com/Renova/"
+                  description="Optimize your business"
+                  >
+                </share-buttons>
+          </div>  -->
+
+
+          
+        <div class="justify-content-center ">
+          <br>
+          <div class="row">
+            <div class="col-3 text-center">
+              <p>Career Oportunities:</p>
+            </div>
+            <div class="col-9"> 
+              <div class="for-login">
+
+                <div class="d-flex justify-content-center">
+                  <i class="far fa-user-circle " style="font-size:60px;  color: #B2B2B2 0% 0% no-repeat padding-box;"></i>  
+                </div>
+
+                <br>
+
+                <div class="d-flex justify-content-center link-jobs">
+                  <span class="sing-in">Sign In</span>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                  <span class="account">Already have an account?</span>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                  <span class="email-address">Enter your email address and password (both área case - sensitive).</span>
+                </div>
+
+                <div class="row">
+
+                  <div class="col-auto row-email">
+                    <span class="email-address-label" style="margin-left: 10px;">Email Address:</span>
+                  </div>
+
+                  <div class="col row-email">
+                      <input type="email" required class="input-email-registro "  aria-label="Username" aria-describedby="basic-addon1" #userName required>
+                  </div>
+
+                  <div class="row input-password-registro">
+                  <div class="col-auto ">
+                    <span class="password-label" style="margin-left: 35px;">Pasword:</span>
+                  </div>
+                         
+                  <div class="col ">
+                      <input type="password" id="myInput" required   class="input-pass-registro "  aria-label="Username" aria-describedby="basic-addon1" #userPassword  required>
+                      <button  class="showregister" style="background: #FFFCFC 0% 0% no-repeat padding-box;border-radius: 18px; border:0;margin-left:10px;width: 99px;" value="Log in" onclick="myFunction()"> Show</button>
+                  </div>
+
+                </div>
+
+                <div class="d-flex justify-content-center">
+                  <input type="button" class="btn btn-dark sing-in-button"  value="Sing In" (click)="authService.SignIn(userName.value, userPassword.value)" />
+                  <span class="forgot-password-label email-address-label " routerLink="/forgot-password"> &nbsp; Forgot your password?</span>
+                  <!-- <a routerLink="/forgot-password" class="forgot-password-label email-address-label "><span > &nbsp; Forgot your password?</span></a> -->
+                </div>
+
+                <p class="Not-registered-user" style="margin-left: 35px;" routerLink="/register-user">Not a registered user yet?</p>
+
+                <div class="d-flex justify-content-center">
+                  <button type="button" class="btn btn-light create-an-account-button" routerLink="/register-user">  Create an account</button>
+                  <span class="forgot-password-label email-address-label"> &nbsp; to apply for our career opportunities.</span>
+                </div>
+
+
+                </div>
+
+              </div>
+              
+            </div>
+
+            
+
+          </div>
+          
+        </div> <!-- fin del div -->
+
+        </div>
+
+        <div class="row justify-content-center">
+
+          <div class="row" style="margin-top: 20px; ">
+            <div class="col-3"></div>
+            <div class="col-6">Renovasolutions.com &nbsp; view All Jobs &nbsp; Top Job Searches &nbsp; Privacy Policy </div>
+            <div class="col-3"></div>
+          </div>
+
+        
+
+          <!-- <div class="col-8 ">
+           
+            <ul class="list-group list-group-horizontal-lg align-items-center justify-content-center">
+              <li class="list-group-item border-0">Renovasolutions.com</li>
+              <li class="list-group-item border-0">view All Jobs</li>
+              <li class="list-group-item border-0">Top Job Searches</li>
+              <li class="list-group-item border-0">Privacy Policy</li>
+            </ul>
+          </div> -->
+        </div>
+
+
+    </div>
+
+   
+    
+    </div>
+ 
+</body>
+
+

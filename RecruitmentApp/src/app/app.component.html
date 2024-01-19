@@ -1,0 +1,4 @@
+<app-layout *ngIf="ready" [attr.route]="currentRoute">
+    <router-outlet *ngIf="jsonConf.loaded && webConf.companyToken && ready"></router-outlet>
+</app-layout>
+<app-login *ngIf="jsonConf.loaded && ready"></app-login>

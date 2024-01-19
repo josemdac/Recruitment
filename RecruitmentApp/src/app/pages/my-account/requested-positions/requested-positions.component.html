@@ -1,0 +1,27 @@
+<kendo-grid
+    [data]="items"
+    (remove)="removeHandler($event.dataItem)"
+    style="max-height: 300px"
+>
+
+<kendo-grid-column field="position" [title]="'POSITIONTITLE' | translate" [width]="180">
+    <ng-template kendoGridCellTemplate let-dataItem>
+        <span *ngIf="dataItem.position">{{ dataItem.position.positionDescription }}</span>
+    </ng-template>
+</kendo-grid-column>
+<kendo-grid-column class="text-right" headerClass="text-right" [width]="180" 
+    field="requestDate" [title]="'REQUESTDATE'| translate">
+    <ng-template kendoGridCellTemplate let-dataItem>
+        {{ dataItem.requestDate | date: 'shortDate' }}
+    </ng-template>
+</kendo-grid-column>
+
+<kendo-grid-column [width]="180" 
+    field="applicationStatus" [title]="'Status'| translate">
+    <ng-template kendoGridCellTemplate let-dataItem>
+        <span *ngIf="dataItem.applicantStatus">
+            {{ dataItem.applicantStatus | applicStatDec }}
+        </span>
+    </ng-template>
+</kendo-grid-column>
+</kendo-grid>

@@ -1,0 +1,278 @@
+<body class="container-fluid">
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+       
+    <a class="navbar-brand me-auto" [routerLink]="['/home']" >RENOVA</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page"  [routerLink]="['/home']"><i class="fas fa-globe"></i> Home</a>
+            </li>
+        
+        </ul>
+    </div>
+
+</nav>
+
+<div class="d-flex justify-content-end barra-menu " >
+  <button type="button" class="btn" routerLink="/tablas" > <b>SEARCH JOBS </b> </button>
+  <button type="button" class="btn" routerLink="/register-user"> <b>JOIN OUR TALENT COMMUNITY</b> </button>
+  <button type="button" class="btn" routerLink="/sign-in"><b>LOGIN</b> </button>
+</div> 
+
+<div class="body-image-register" style="height: 100%;">
+
+      <div class=" container-fluid ">
+        <div class="row  ">
+         
+          <div class="d-flex justify-content-end  " >
+            <!-- <P class="" style="color: #A61414;font: normal normal bold 13px/18px Open Sans; margin-top: 20px; margin-right: 20px;">SHARE </P> -->
+            <!-- <img src="assets/img/1_01.png" style="height: 55px; width: 45px;" alt="">
+                  <img src="assets/img/1_02.png" style="height: 55px; width: 45px;" alt="">
+                  <img src="assets/img/1_03.png" style="height: 55px; width: 45px;"  alt="">
+                  <img src="assets/img/1_04.png" style="height: 55px; width: 45px;"  alt=""> -->
+              <!--     <share-buttons theme="circles-dark"
+                  [include]="[ 'linkedin', 'facebook','twitter']"
+                  [showIcon]="true"
+                  [showText]="false"
+                  url="https://www.renovanowcloud.com/Renova/"
+                  description="Optimize your business"
+                  >
+                </share-buttons> -->
+          </div>  
+
+        <div class="justify-content-center">
+          <br>
+          <div class="row">
+            <div class="col-3 text-center">
+              <p>Career Oportunities:</p>
+            </div>
+            <div class="col-9"> 
+              <div class="for-create" style="height: 850px;">
+
+                <div class="d-flex justify-content-center">
+                  <i class="far fa-user-plus " style="font-size:60px; color: #B2B2B2 0% 0% no-repeat padding-box; margin-top: 10px;"></i>  
+                </div>
+
+                <br>
+
+                <div class="d-flex justify-content-center link-jobs" style="margin-top: 5px;">
+                  <span class="create-an-account">Create an account</span>
+                </div>
+
+                <div class="row" style="margin-top: 15px; margin-left: 30px;">
+                  <div class="col-auto"><span class="register-label">Already a registered user?</span></div>
+                  <div class="col-auto"><button type="button" class="btn in-login" routerLink="/sign-in">Please sign in</button></div>
+                  <div class="col-auto"><span class="register-label">credentials are case sensitive</span></div>
+                </div>
+
+                <div class="d-flex " style="margin-left: 40px;">
+                  <span class="email-address">*Indicates a required field.</span>
+                </div>
+
+                <!-- formulario -->
+
+                <form [formGroup]="formularioContacto" >
+
+                <div class="row">
+
+                  <div class="col-auto ">
+                    <span class="email-address-label" style="margin-top: 5px; margin-left: 75px;">Email Address:</span>
+                  </div>
+
+                  <div class="col ">
+                    <input formControlName="mail" required minlength="4" type="email" class="input-email-registro "  aria-describedby="basic-addon1"style="margin-top: 5px;" [(ngModel)]="reg.EmailAddress"  #userEmail required />
+                    <span *ngIf="this.formularioContacto.get('mail')?.errors?.['required']">
+                      *
+                    </span>
+                  </div>
+
+                  <br>
+
+                  <div class="col-auto " style="margin-top: 7px; margin-left: 15px;">
+                    <span class="email-address-label" >Confirm Email Address:</span>
+                  </div>
+
+                  <div class="col " style="margin-top: 5px;">
+                      <input formControlName="mailconfirmation" required type="text" class="input-email-registro "  aria-label="Username" aria-describedby="basic-addon1">
+                      <span *ngIf="this.formularioContacto.get('mailconfirmation')?.errors?.['required']">
+                        *
+                      </span>
+                  </div>
+
+                  <div class="col-auto " style="margin-top: 5px; margin-left: 105px;">
+                    <span class="password-label">Password:</span>
+                  </div>
+                         
+                  <div class="col " style="margin-top: 5px; ">
+                      <input type="password" id="myInput"  class="input-pass-registro "  aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="reg.Password"  #userPwd required > 
+                      <button  style="background: #FFFCFC 0% 0% no-repeat padding-box;border-radius: 18px; border:0;margin-left:10px;width: 99px;" onclick="myFunction()" > <b>Show</b> </button>
+                  </div>
+
+                  <div class="row input-password-registro" style="margin-left: 47px;">
+                  <div class="col-auto ">
+                    <span class="password-label">Choose Password</span>
+                  </div>
+                         
+                  <div class="col ">
+                      <div class="cuadro">
+                        <ul>
+                          <li>
+                            Password must be at least 8 characters long. 
+                          </li>
+                          <li>
+                             Password must not be longer tha 20 characters 
+                          </li>
+                          <li>
+                            Password must contain at least one upper case and one lower case lettler. 
+                          </li>
+                          <li>
+                            Password must contain at least one number or punctuation carácter. 
+                          </li>
+                          <li>
+                            Password must not contain space or Unicode characters.
+                          </li>
+                        </ul>
+                        
+                      </div>
+                  </div>
+
+                </div>
+                <div class="row">
+
+                <div class="col-auto " style="margin-top: 5px; margin-left: 55px;">
+                  <span class="password-label">Retype Password:</span> 
+                </div>
+                       
+                <div class="col " style="margin-top: 5px;">
+                    <input type="password" class="input-pass-registro "  aria-label="Username" aria-describedby="basic-addon1" id="myInput" > 
+                    <button  style="background: #FFFCFC 0% 0% no-repeat padding-box;border-radius: 18px; border:0;margin-left:10px;width: 99px;" onclick="myFunction()" > <b>Show</b> </button>
+                </div>
+                
+                </div>
+
+                <div class="row">
+                  
+                  <div class="col-auto " style="margin-top: 5px; margin-left: 95px;">
+                    <span class="password-label" style>First Name:</span>
+                  </div>
+                         
+                  <div class="col " style="margin-top: 5px;">
+                      <input formControlName="nombre" size="40" type="text" class="input-pass-registro "  aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="reg.FirstName" required>
+                      <span *ngIf="this.formularioContacto.get('nombre')?.errors?.['required']"> &nbsp; *</span>
+                  </div>
+                  
+                  </div>
+
+                  <div class="row">
+                  
+                    <div class="col-auto " style="margin-top: 5px; margin-left: 95px;">
+                      <span class="password-label">Last Name:</span>
+                    </div>
+                           
+                    <div class="col " style="margin-top: 5px;">
+                        <input size="40" formControlName="lastname"  type="text" class="input-pass-registro "  aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="reg.LastName" required>
+                        <span *ngIf="this.formularioContacto.get('lastname')?.errors?.['required']"> &nbsp; *</span>
+                    </div>
+                    
+                    </div>
+
+                    <div class="row">
+                  
+                      <div class="col-auto " style="margin-top: 5px;margin-left: 31px;">
+                        <span class="password-label">Country/Region code</span>
+                      </div>
+                             
+                      <div class="col " style="margin-top: 5px;">
+                        <select class="form-select bold" aria-label="Default select example" style="width: 275px; border-radius: 15px;">
+                          <option selected>  -Select menu- </option>
+                          <option value="1">Puerto Rico</option>
+                          <option value="2">Colombia</option>
+                          <option value="3">Venezuela</option>
+                        </select>
+                      </div>
+                      
+                      </div>
+
+                      <div class="row">
+                  
+                        <div class="col-auto " style="margin-top: 5px; margin-left: 65px;">
+                          <span class="password-label">Phone Number:</span>
+                        </div>
+                               
+                        <div class="col " style="margin-top: 5px;">
+                            <input  size="40px" type="text" class="input-pass-registro "  aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="reg.PhoneNumber">
+                        </div>
+                        
+                      </div>
+
+                      <div class="row">
+                  
+                        <div class="col-auto " style="margin-top: 5px; margin-left: 79px;">
+                          <span class="password-label">Notifications:</span>
+                        </div>
+                               
+                        <div class="col " style="margin-top: 5px;">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                              Receive new job posting notifications
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                              Hear more about career opportunities
+                            </label>
+                          </div>
+                        </div>
+                        
+                      </div>
+
+                <div class="d-flex justify-content-center">
+                  <button type="button" class="btn-dark round-buttom" (click)="authService.SignUp(userEmail.value, userPwd.value)" (click)="altauser()" style="width: 175px;">  Create account</button>
+                  <!-- <button type="button" class="btn btn-light create-an-account-button" (click)="authService.GoogleAuth()" routerLink="/information"></button> -->
+                </div>
+
+
+                </div>
+                  
+
+                  </form>
+              </div>
+                  <!-- Fin del cuadro -->
+            
+              
+            </div>
+
+            
+
+          </div>
+          
+        </div> <!-- fin del div -->
+
+        </div>
+
+        <div class="row justify-content-center">
+
+          <span class="text-center" style="margin-top: 10px;"> Renovasolutions.com &nbsp; view All Jobs &nbsp; Top Job Searches &nbsp; Privacy Policy </span> 
+<!-- 
+          <div class="col" style="margin-top: 10px;">
+           
+            <ul class="list-group list-group-horizontal-lg align-items-center justify-content-center" >
+              <li class="list-group-item border-0">Renovasolutions.com</li>
+              <li class="list-group-item border-0">view All Jobs</li>
+              <li class="list-group-item border-0">Top Job Searches</li>
+              <li class="list-group-item border-0">Privacy Policy</li>
+            </ul>
+          </div> -->
+        </div>
+
+    </div>
+
+  </div>
+
+</body>
+

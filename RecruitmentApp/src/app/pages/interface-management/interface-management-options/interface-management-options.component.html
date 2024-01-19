@@ -1,0 +1,51 @@
+<div class="container-fluid" style="padding: 0">
+    <div class="row">
+        <div class="col-sm-12" style="    margin-left: -0.25em;
+        margin-top: 0.5em;
+        font-weight: 700;">
+            {{'ColorManagement' | translate}}
+        </div>
+        <div class="col-sm-12 note mb-2" style="margin-bottom: 1rem;">{{'DefaultColorCannotBeMod' | translate}}</div>
+
+        <form-input *ngFor="let field of f1_1" [field]="field"
+        [appFieldTip]="'LogoImageSize' | translate" [fieldNames]="['logoImageFile']"
+        [disabled]="!imservice.allowed || (imservice.formData.useCustomColors == 'N' && isColor(field))"
+         [value]="imservice.formData[field.name]" (valueChange)="changeOption($event, field)">
+        </form-input>
+        <div class="col-sm-12" style="    margin-left: -0.25em;
+        margin-top: 0.5em;
+        font-weight: 700;">
+            {{'Images' | translate}}
+        </div>
+        <form-input *ngFor="let field of f1_2" [field]="field"
+        [appFieldTip]="'LogoImageSize' | translate" [fieldNames]="['logoImageFile']"
+        [disabled]="!imservice.allowed || (imservice.formData.useCustomColors == 'N' && isColor(field))"
+         [value]="imservice.formData[field.name]" (valueChange)="changeOption($event, field)">
+        </form-input>
+        <div class="col-sm-12">
+            <img class="logo-preview" [src]="logoPreview" />
+        </div>
+        <form-input *ngFor="let field of f2" [field]="field"
+        [disabled]="!imservice.allowed || (imservice.formData.useCustomColors == 'N' && isColor(field))"
+        [appFieldTip]="'MainImageSize' | translate" [fieldNames]="['mainImageFile']"
+         [value]="imservice.formData[field.name]" (valueChange)="changeOption($event, field)">
+        </form-input>
+        <div class="col-sm-12">
+            <img class="mainimage-preview" [src]="mainImagePreview" />
+        </div>
+        <form-input *ngFor="let field of f3" [field]="field"
+        [appFieldTip]="'FaviconTip' | translate" [fieldNames]="['faviconFile']"
+        [disabled]="!imservice.allowed || (imservice.formData.useCustomColors == 'N' && isColor(field))"
+         [value]="imservice.formData[field.name]" (valueChange)="changeOption($event, field)">
+        </form-input>
+        <div class="col-sm-12">
+            <img class="favicon-preview" [src]="faviconPreview" />
+        </div>
+
+        <form-input *ngFor="let field of f4" [field]="field"
+        [appFieldTip]="'FaviconTip' | translate" [fieldNames]="['faviconFile']"
+        [disabled]="!imservice.allowed || (imservice.formData.useCustomColors == 'N' && isColor(field))"
+         [value]="imservice.formData[field.name]" (valueChange)="changeOption($event, field)">
+        </form-input>
+    </div>
+</div>

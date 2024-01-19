@@ -1,0 +1,8 @@
+<div class="container-fluid" style="padding: 0">
+    <div class="row">
+        <form-input *ngFor="let field of fields" [field]="field" [disabled]="!imservice.allowed"
+         [value]="imservice.formData[field.name]" (valueChange)="changeToggle($event, field)">
+        </form-input>
+        
+    </div>
+</div>

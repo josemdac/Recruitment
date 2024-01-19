@@ -1,0 +1,31 @@
+.one::placeholder {
+font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) 13px/18px Open Sans;
+letter-spacing: var(--unnamed-character-spacing-0);
+color: var(--unnamed-color-000000);
+text-align: center;
+font: normal normal normal 13px/18px Open Sans;
+letter-spacing: 0px;
+color: #000000;
+font-weight: bold;
+
+  }
+
+  .two::placeholder {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) 13px/18px Open Sans;
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-000000);
+    text-align: left;
+    font: normal normal normal 13px/18px Open Sans;
+    letter-spacing: 0px;
+    color: #ffffff;
+    font-weight: bold;
+    
+      }
+  
+  .email-adress::placeholder {
+    color: #ffffff;
+  }
+
+  input[type="email"].email-adress::placeholder {
+    color: orange;
+  }

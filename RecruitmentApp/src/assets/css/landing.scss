@@ -1,0 +1,95 @@
+app-landing {position: absolute;top: 0;left: 0;right: 0;bottom: 0;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    padding-top: $navHeight;
+    display: flex;
+    .text1 {/* position: absolute; */
+        height: fit-content;margin: auto;display: block;margin-left: calc(100%/6); margin-right: 0;width: calc(100%/3);
+        color: white;overflow: hidden;text-overflow: ellipsis;z-index: 2 !important;
+        font-size: 2em;
+    }
+
+    .find-job {margin-right: calc(100%/6);padding-top: 1em; width: calc(100%/3); padding-left: 1em;
+        z-index: 1;
+        height: fit-content;
+        margin-top: auto;
+        margin-bottom: auto;
+        input[type="text"] {border-radius: 0;margin-top: .5em;margin-bottom: .5em;max-width: 23em;}   
+    }
+
+}
+
+app-landing::before {content: '';position: absolute;top: 0;bottom: 0;left: 0;right: 0;background: black;opacity: .3;}
+
+
+@media (min-width: 600px) {
+    
+}
+@media (max-width: 600px) {
+    app-landing {
+        position: initial !important;margin-top: -50px;height: fit-content !important;
+        display: flex;flex-direction: column;text-align: center;
+    
+        .find-job {width: calc(100vw - 1em) !important;padding-bottom: 1em;
+            input.form-control {/* width: 100vw !important; *//* margin-right: 0 !important; */max-width: none;}
+        }
+
+        .find-job button {width: 100%;}
+        .text1 {width: calc(100vw - 1em) !important;margin: 0.5em !important;}
+
+    }
+}
+
+@media (min-height: 501px) and (max-height: 600px){
+    app-landing {
+        position: initial !important;
+    }
+}
+
+@media (max-height: 500px) {
+    app-landing {
+        position: initial !important;margin-top: -50px;height: fit-content !important;
+        display: flex;flex-direction: column;text-align: center;
+    
+        .find-job {width: calc(100vw - 1em) !important;padding-bottom: 1em;
+           input.form-control {/* width: 100vw !important; *//* margin-right: 0 !important; */max-width: none;}
+        }
+
+        .find-job button {width: 100%;}
+        .text1 {width: calc(100vw - 1em) !important;margin: 0.5em !important;}
+
+    }
+}
+
+
+@media (min-width: 768px) and (orientation: portrait){
+    .find-job button {max-width: none !important;width: 100%;}
+   
+}
+
+app-job-list > div.container-fluid {
+    height: calc(100% - 4em) !important;
+}
+
+app-job-list > div.container-fluid > div.row {
+    height: 100%;
+}
+
+app-job-results {
+    display: block;
+    height: 100% !important;
+}
+
+app-job-list > div.container-fluid > div.row div:first-child {
+    height: fit-content !important;
+}
+
+app-job-list > div.container-fluid > div.row > div:nth-child(2) {
+    height: calc(100vh - 24.2em) !important;
+}
+
+app-job-results kendo-grid {
+    height: 100% !important;
+    max-height: none !important;
+}

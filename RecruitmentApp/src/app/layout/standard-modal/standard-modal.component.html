@@ -1,0 +1,53 @@
+<div class="row" dragModal [dragHeader]="stModalService.dragHeader" [width]="stModalService.width" 
+[ngStyle]="{ paddingTop: stModalService.ptop, top: stModalService.top }">
+    <div class="standard-modal {{stModalService.customClass}}">
+        
+    
+
+
+    <form #form="ngForm" autocomplete="off"  (submit)="submit(form)">
+        <div class="container-fluid p-0" style="user-select: none;
+        background: white;
+        border: solid 1px #ccc;">
+  
+            <div class="row ml-0 mr-0">
+            <div class="col-sm-12 header" >
+
+           
+            <div class="w-100 d-flex">
+                <div *ngIf="stModalService.header" style="display: contents;">
+                    <ng-container *ngTemplateOutlet="stModalService.header"></ng-container>
+                </div>
+            </div>
+            <span style="float: right; display: flex;">
+                <button class="close" (click)="cancel($event)">x</button>
+            </span>
+            
+
+
+               
+                
+            </div>
+              
+        
+            <div *ngIf="stModalService.content" class="col-sm-12 content" style="height: fit-content;
+            min-height: 300px;">
+                <ng-container *ngTemplateOutlet="stModalService.content"></ng-container>
+            </div>
+        
+            </div>
+              
+            <div class="row footer">
+                <div *ngIf="stModalService.footer"  style="display: contents;">
+                    <ng-container *ngTemplateOutlet="stModalService.footer"></ng-container>
+                </div>
+            </div>
+
+
+        </div>
+  
+      </form>
+      
+    </div>
+
+  </div>

@@ -1,0 +1,570 @@
+
+
+  
+
+app-login, app-imlogin{
+    position: fixed;
+    display: flex;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-color: rgba(0,0,0,.3);
+    .btn-login-icon {
+        opacity: 40%;
+        width:40px;
+    }
+    
+    .login-subtitle {
+        padding-top: 11px !important;
+        padding-bottom: 0 !important;
+        font-size: 1.1em !important;
+        font-weight: bold !important;
+        height: 48px !important;
+        vertical-align: middle;
+        line-height: 1.1em;
+        display: none !important; 
+    }
+    .login-text {
+        padding-bottom: 20px;
+        padding-bottom: 20px;
+        font-size: .8em !important;
+        text-align: justify-all;
+        /*color: #777 !important;*/
+        line-height: 1.1em;
+        margin-top: 1em;
+        
+        color: white !important;
+    }
+    
+    
+    .login-modal> form> div {
+        width: 100% !important;
+        display: inline-flex;
+       
+    }
+    
+    .login-modal>form {
+        width: calc(100% - 1em) !important;
+        height: 100% !important;
+        margin: 1em !important;
+        background: transparent !important;
+    }
+    
+    .login-modal {
+        background: transparent !important;
+    }
+    
+    .login-modal .col-auto.d-block.h-100.bg-signin.text-light.d-flex {
+        width: 100% !important;
+        background-size: cover;
+        /* order: revert; */
+    }
+    
+    
+    .login-content input:focus {
+        border: none !important;
+        outline: none !important;
+        box-shadow: none;
+        border-bottom: solid 1px black !important;
+        border-radius: 0;
+      }
+      
+      .login-content input {
+        border: none !important;
+        outline: none !important;
+        box-shadow: none;
+        border-bottom: solid 1px black !important;
+        border-radius: 0;
+        width: 100% !important;
+      }
+      
+      .form-Login{
+          display:none;
+          width:480px;
+          background-color:#F7F7F7;
+          margin-top:180px;
+          margin-left:-200px;
+          z-index:10000;
+          left:50%;
+          position:absolute;padding:30px;
+          border: 1px solid #696969;
+          border-radius: 10px;
+      }
+      
+      .form-login-container {
+        width: 800px;
+        background: white;
+        height: 500px;
+        display: block;
+        margin: auto;
+      }
+      
+      div#formLogin {
+        display: flex;
+          background: transparent;
+          z-index: 900;
+          margin-right: 6em;
+          padding-left: 12em;
+          position: fixed;
+          z-index: 5000;
+          top: 0;
+          right: 0;
+          left: 0;
+          bottom: 0;
+          height: 100%;
+          width: 100%;
+      }
+    
+      
+    .uppercase{
+        text-transform: uppercase !important;
+      }
+      
+      .close-login{
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: .5em;
+        margin-top: .3em;
+        font-size: 1.5em;
+        cursor: pointer;
+      }
+      
+      #formMenu{
+         
+         display: block;
+      }
+      
+      .login100-form {
+        width: 400px; /* 560*/
+        min-height: 100vh;
+         display: block;
+        background-color: #f7f7f7;
+        padding: 70px 55px 55px 55px;
+      }
+      
+      .login100-form-title {
+        width: 100%;
+        display: block;
+        font-family: 'Lato', Arial, Helvetica, sans-serif;
+        font-size: 30px;
+        color: #C66D10;
+        line-height: 1.2;
+        text-align: center;
+      }
+    
+      .login100-form-social-item {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+        color: #fff;
+        border-radius: 50%;
+      }
+      
+      .login100-form-social-item:hover {
+        background: #333333;
+        color: #fff;
+      }
+      
+      span.login-input-icon {
+        position: absolute;
+        display: flex;
+        top: 0;
+        margin-top: 1.4em;
+        font-size: 1.2em;
+        color: var(--loginbackground);
+        opacity: .6;
+      }
+      .col.d-block.m-auto.login-content .form-group {
+        min-height: 4em;
+      }
+      
+      .login-content .form-group {
+        display: block;
+      }
+      
+      .login-textbox {
+        padding-left: 2em !important;
+        padding-right: 2em !important;
+      }
+      
+      a.login-forgot-pass {
+        position: absolute;
+        right: 1.5em;
+        bottom: -1em;
+      }
+      span.toggle-password {
+        position: absolute;
+        top: 1.2em;
+        right: 0;
+        font-size: 1.2em;
+        color: var(--loginbackground);
+        opacity: .6;
+      }
+      
+      .bg-signin{
+        background-image: url(/assets/img/RENOVANow-SignIn.png);
+        background-repeat: no-repeat;
+        object-fit: cover;
+    }
+    .h-login{
+        height: var(--loginheight);
+    }
+
+a {
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #666666;
+    margin: 0px;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+  }
+  
+  a:focus {
+    outline: none !important;
+  }
+  
+  a:hover {
+    text-decoration: none;
+    color: #6675df;
+    cursor: pointer;
+    opacity: 100%;
+  }
+  
+  .login-textbox {
+    border-style: none none solid none;
+    border-color: darkslategray;
+    border-width: 1px;
+    margin-bottom: 3rem;
+    width: 300px !important;
+    font-size: .8em !important;
+    position: absolute;
+    top: 1.4em;
+    height: calc(1.5em + .75rem + 2px);
+  
+  }
+  .login-content{
+    padding: 4em !important;
+    width: 500px;
+    min-height: 520px;
+    display: block;
+  }
+
+    .passfield{
+    text-security:disc; -webkit-text-security:disc;
+    }
+
+    .captcha-text {
+    height: 4em;
+    margin-top: 2.9em;
+    font-size: .7em;
+    padding-right: 1.5em;
+    color: #888;
+    }
+
+    .captcha-text a {
+    font-size: 1em;
+    color: var(--linkcolor) !important;
+    }
+}
+
+app-login .login-modal,app-imlogin .login-modal{
+    display: block;
+    margin: auto;
+    z-index: 100;
+    background: white;
+}
+
+app-login .close-login, app-imlogin .close-login {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    margin: .5em !important;
+    margin-top: .3em !important;
+    font-size: 1.5rem !important;
+    cursor: pointer !important;
+    text-align: right;
+}
+app-login label.uppercase.k-label, app-imlogin label.uppercase.k-label {
+    display: block;
+}
+app-login span.login-input-icon, app-imlogin span.login-input-icon  {
+    position: absolute;
+    display: flex;
+    top: 0;
+    margin-top: 1.4em;
+    font-size: 1.2em;
+    color: var(--loginbackground);
+    opacity: .6;
+}
+
+@media (max-height: 600px){
+  .login-modal form .row {height: calc(100vh - 4em) !important;}
+
+  .bg-signin {display: none !important;}
+}
+@media only screen and (max-width: 600px){
+
+  app-login{
+    .bg-signin {display: none !important;}
+  }
+  app-login form, app-imlogin form {
+    position: fixed;
+    top: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    height: 100vh !important;
+    }
+
+    app-login form>.row, app-imlogin form>.row  {
+        width: 100% !important;
+        top: 0 !important;
+        margin: 0;
+    }
+
+    app-login form, app-imlogin form {
+        overflow-y: auto;
+        border: 0 !important;
+    }
+
+    app-login .col.d-block.m-auto.login-content, 
+    app-imlogin .col.d-block.m-auto.login-content {
+        background: white;
+        border: 0 !important;
+        border-left: 0 !important;
+        margin-left: 0 !important;
+        /* padding-left: 0 !important; */
+    }
+
+    .login-modal .cxol-auto.d-block.h-100.bg-signin.text-light {
+        height: 50% !important;
+    }
+
+    .login-modal div.h-100.bg-signin.text-light.d-flex {
+        height: 50% !important;
+    }
+
+    app-login form::-webkit-scrollbar, 
+    app-imlogin form::-webkit-scrollbar {
+        width: 0;
+    }
+
+    app-login .login-modal form,
+    app-imlogin .login-modal form {
+    margin: 0 !important;
+    width: 100% !important;
+    }
+    app-login .close-login,
+    app-imlogin .close-login {
+    z-index: 1000;
+    top: 3em !important;
+    }
+    app-login .login-content,
+    app-imlogin .login-content {
+    padding-top: 1em !important;
+    padding-bottom: 1em !important;
+    }
+}
+
+
+app-login, app-imlogin{
+
+  #btnLogin{
+    min-width: 8em;
+  }
+  .social-login {
+    margin-top: 2em;
+    margin-bottom: -2em;
+  }
+  .social-login ul.options {
+      display: flex;
+      padding-left: 0;
+      margin-top: .5em;
+  }
+
+  .social-login ul.options li {
+      display: block;
+      margin-right: .6em;
+  }
+
+  .social-login ul.options .icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 5px;
+      border: solid 1px #ccc;
+  }
+
+  .separator {
+      margin-top: 1em;
+      margin-bottom: 1em;
+      height: .1em;
+      border-bottom: solid 1px #ccc;
+  }
+
+
+  a.forgot-pass {
+      text-align: center;
+      display: block;
+      padding-left: 1em;
+      
+      color: var(--linkcolor);
+      text-decoration: underline;
+  }
+  a.create-account {
+      
+      font-size: .8rem !important;
+      color: var(--linkcolor);
+      text-decoration: none;
+  }
+
+  .header{
+    background-color: var(--maincolor); color: var(--mainfontcolor);
+    height: $headerHeight !important;
+  }
+
+  .header-logo {
+      height: 60px;margin-top: 10px;display: block;margin-bottom: 10px;margin-left: 10px;
+      
+      cursor: pointer;
+  }
+
+  .header-logo img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    object-position: left;
+  }
+  #pdwDiv span.toggle {
+    height: fit-content;
+    font-size: 1.2rem;
+    right: 0 !important;
+  }
+}
+.login-modal{
+  app-reset-password{
+    .row.flex-grow-1.reset-password {
+        width: 100%;
+        /* min-height: 500px; */
+        display: flex;
+        align-content: flex-start;
+        padding: 0rem;
+        margin: auto;
+        height: 100%;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .user-activation {
+        padding: 4em;
+        min-height: 500px;
+    }
+    .buttons {
+      display: flex;
+      flex-direction: row-reverse;
+      gap: 1rem;
+      padding-right: 0 !important;
+      margin-top: revert;
+  }
+
+  .buttons button {
+      margin: 0 !important;
+  }
+
+  .activation-container.flex-column.d-flex {
+      height: 100%;
+  }
+
+  .row.flex-grow-1.reset-password form {
+      display: contents;
+  }
+
+  .container-fluid.form-cols {
+      height: 100%;
+      position: initial;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+  }
+
+  .container-fluid.form-cols form-input input {
+      width: calc(100% -  .25em);
+  }
+  } 
+
+  app-reset-password > div {
+      width: calc(501px + 16em);
+  }
+
+  
+}
+
+app-reset-password{
+  form-input > div[id="userName"] label {
+      display: none;
+  }
+  .back-btn {display: none;}
+  .invite-sent div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+}
+
+app-reset-password-form {
+  display: block;
+  width: 100%;
+    
+  app-reset-password .header {
+    display: none;
+  }
+
+  app-reset-password .back-btn {display: none;}
+
+  app-reset-password > div.row {
+    border: none !important;
+    width: 100%;
+  }
+
+  app-reset-password{
+    .activation-container.flex-column.d-flex {
+        padding: 3rem;
+    }
+    
+    .col-sm-12.mr-0.p-4.pt-0.pb-3.buttons {
+        padding: 0 !important;
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 1rem;
+    }
+    
+    .col-sm-12.mr-0.p-4.pt-0.pb-3.buttons button {
+        margin: 0 !important;
+        /* gap: 1rem; */
+    }
+    
+    .activation-container.flex-column.d-flex {
+        height: 100%;
+    }
+    
+    .row.flex-grow-1.reset-password form {
+        display: contents;
+    }
+    
+    .container-fluid.form-cols {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: calc(100% - 2rem);
+    }
+    
+    .row.flex-grow-1.reset-password {
+        gap: 1rem;
+    }
+  }
+
+}

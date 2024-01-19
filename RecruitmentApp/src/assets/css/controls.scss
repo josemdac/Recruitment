@@ -1,0 +1,196 @@
+.main-btn{
+    background: var(--buttons2color) !important; color: var(--buttons2textcolor) !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: none !important;
+    outline: none !important;
+}
+.main-btn:hover{
+    background: var(--buttons2hovercolor) !important;
+}
+.btn{
+    border-radius: 0 !important;
+}
+
+app-expand-tab-layout{
+    display: block;
+    ul.expand-tablist {padding-left: 0;}
+
+    .controls {display: flex;
+        button.btn.expand {margin-left: auto;}
+        button:focus{
+            border: none;
+            box-shadow: none !important;
+        }
+    }
+    .item .label:hover { 
+        background: var(--tabheaderhoverbg);
+    }
+
+    .item .label{
+        transition:  500ms;
+    }
+
+    app-expand-tab {
+        display: contents;
+      
+        li.item .active .content {min-height: 100px;padding: .5em;}
+    }
+    
+    app-expand-tab li.item div.label {
+        padding: 0.3em;
+        background: var(--tabheaderbg);
+        color: var(--tabheaderfontcolor);
+        cursor: pointer;
+        font-size: 1.2em;
+    
+    }
+
+    app-expand-tab li.item {/* background: blue; *//* color: white; */display: block;margin-bottom: .5em;}
+
+    app-expand-tab li.item div.label .icon {margin-right: .5em;margin-left: .5em;}
+    app-expand-tab .content.active {padding: .5em;/* border: solid; */}
+
+    app-expand-tab li.item {width: 100%;}
+
+    app-expand-tab li.item .content {transition: 500ms;}
+
+}
+
+
+.std-title{
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: var(--stdtitlecolor);
+}
+.std-subtitle {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+form-input {display: contents;
+    .form-check-input[type=checkbox] {
+        border-radius: 0.25em;
+        display: revert;
+        float: left;
+        margin-right: .5em;
+    }
+    .invalid .form-control {
+        background: red !important;
+    }
+
+    .req-asterisk {color: red;}
+}
+
+form-input > div {padding: .5em;}
+
+form-input[type="switch"]>div {
+    display: flex;flex-direction: column;
+    span.k-switch-label-on {color: transparent;}
+    span.k-switch-label-off {color: transparent;}
+    kendo-switch {margin-top: .3em;}
+
+    .k-switch-track {
+        border-color: var(--switchbtncolor) !important;
+        background-color: var(--switchbtncolor)}
+
+    kendo-switch.k-switch.k-switch-md.k-rounded-full.k-switch-off  .k-switch-track {background-color: #ccc !important;border-color: #ccc !important;}
+
+}
+
+form-input[type="daterange"] {
+    kendo-daterange label {width: 100%;}
+
+    kendo-daterange {width: 100%;}
+
+    kendo-daterange .start, kendo-daterange .end {width: 100%;}
+
+    kendo-daterange .start {margin-right: 1em;}
+
+    kendo-daterange.k-daterangepicker {gap: 0 !important;}
+
+    kendo-daterange .start kendo-dateinput, kendo-daterange .end kendo-dateinput {width: 100% !important;}
+}
+kendo-grid.k-grid th[role="columnheader"] {text-transform: uppercase;}
+
+form-input kendo-dateinput input {text-align: right;}
+
+form-input[type="currency"] input {text-align: right;}
+form-input[type="file"] { 
+    span.file-tip {
+        margin-left: 1em;
+        font-size: .8rem;
+    }
+}
+.text-right {text-align: right !important;}
+
+
+.form-head {
+    padding-left: .5em;margin-top: 2em;
+    .title {font-family: inherit !important;font-style: inherit;font: inherit;text-shadow: none !important;color: inherit;letter-spacing: inherit;font-weight: 700;}
+
+    .close {float: right;/* color: blue; *//* background: transparent; *//* border: none !important; */}
+    
+    .close button {
+        background: transparent;
+        border: none;
+        outline: none;
+        font-size: 1.5em;
+        font-weight: 500;
+    }
+    
+}
+
+form-input[type="checkbox"]{
+    .no-inline-checkbox {display: block;}
+
+    .no-inline-checkbox label {width: 100%;}
+}
+
+.grid-btn {min-height: 2.2em;border-radius: 0;background: #eee;}
+
+
+/**Search Input**/
+form-input.search-input  ::before {
+    content: '\f002';
+    font-family: 'Font Awesome 6 Pro';
+    position: absolute;
+    bottom: .85em;
+    border-radius: 50%;
+    background: #ccc;
+    padding: .1em;
+    width: 1.7em;
+    text-align: center;
+    right: 1em;
+    color: white;
+}
+
+form-input.search-input> div {
+    position: relative;
+}
+
+form-input.search-input{
+    input {
+        padding-right: 2.5em;
+    }
+
+} 
+
+a.back-btn {
+    text-decoration: none;
+    margin-bottom: .5em;
+    display: block;
+    color: var(--linkcolor);
+}
+
+
+.link-text{
+    color: var(--linkcolor) !important;
+    font-weight: 600;
+}
+
+
+@media (max-width: 600px) {
+    .blank{
+        display: none;
+    }
+}

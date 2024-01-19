@@ -1,0 +1,9 @@
+<li class="item">
+    <div class="label {{isActive?'active':''}}" (click)="activate.emit(this)">
+        <span class="icon"><i class="fa fa-caret-right"></i></span><span>{{label}}</span>
+        <span><ng-container *ngIf="labeltpl" [ngTemplateOutlet]="labeltpl"></ng-container></span>
+    </div>
+    <div class="content  {{isActive?'active':''}}" [style.height]="isActive?'auto':'0px'">
+        <ng-content *ngIf="isActive"></ng-content>
+    </div>
+</li>

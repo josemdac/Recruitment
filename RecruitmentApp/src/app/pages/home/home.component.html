@@ -1,0 +1,113 @@
+<body class="container-fluid">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark" style="height: 78px;">
+       
+            <a class="navbar-brand me-auto" href="#">RENOVA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#"><i class="fas fa-globe"></i> </a>
+                    </li>
+                
+                </ul>
+
+                <span class="form-inline ">
+                  <select class="form-control bg-dark border-0 text-white" #selectedLang (change)="switchLang(selectedLang.value)">
+                    <option *ngFor="let language of translate.getLangs()" [value]="language"
+                      [selected]="language === translate.currentLang">
+                      {{ language }}
+                    </option>
+                  </select>
+                </span>
+
+            </div>
+        
+    </nav>
+    <div class="image" style="height: 526px;">
+     
+      <div class="d-flex justify-content-end opacidad " style="background: #FEFEFE 0% 0% no-repeat padding-box;
+      opacity: 0.72;">
+        <button type="button" class="btn" routerLink="/tablas" > <b>{{'SEARCHJOBS' | translate }}</b> </button>
+        <button type="button" class="btn" routerLink="/register-user"> <b>{{'JOINOURTALENTCOMMUNITY' | translate }}</b> </button>
+        <button type="button" class="btn" routerLink="/sign-in"> <b>LOGIN</b> </button>
+      </div> 
+      <div class="row">
+        
+          <div class="banner-primera-imagen" >
+          
+            <div class="row" >
+              <div class="col-8 parrafo-primera-imagen "> <p>{{'Sitetitle' | translate }}</p> </div>
+              <div class="col-4 "><div class="d-flex justify-content-end"><input class="redondeadonorelieve  one" type="text" id="fname" name="fname" placeholder="{{'SearchJobsbykeyword' | translate }}"></div></div>
+
+              <div class="col-8 "> <p class="parrafo-primera-imagen text-center">{{'WITH' | translate }} <span class="bold">{{'RENOVA' | translate }}</span> </p> </div>
+              <div class="col-4 "> <div class="d-flex justify-content-end"> <input class="redondeadonorelieve one " type="text" id="fname" name="fname" placeholder="{{'SearchJobsbylocation' | translate }}"> </div> </div>
+
+              <div class="col-9 "> <p class="parrafo-primera-imagen text-center togheter">{{'Lestsbuildittogether' | translate }}  </p> </div>
+              <div class="col-3 ">
+                <div class="d-flex justify-content-end">
+                <button type="button" class="btn btn-primary btn-xs btn-danger round" style="width: 152px; ">{{'SEARCHJOBS' | translate }}</button>
+              </div>
+
+              </div>
+              
+            </div>
+          
+
+        </div>
+        <!-- <div style="margin-top: -65px;">
+          <button type="button" class="btn btn-primary btn-xs btn-danger round" style="width: 152px;">{{'SEARCHJOBS' | translate }}</button>
+        </div> -->
+
+      </div>
+  </div>
+  <div class="lineas " style="height: 270px; margin-top: 10px;">
+    <div class="company ">
+    <p >{{'Ourcompany' | translate }} <b>{{'EqualEmploymentOpportunity' | translate }}</b> {{'affirmative' | translate }}</p>
+  </div>
+
+  <div class="segundo-parrafo">
+    <p >{{'baseupon' | translate }}</p>
+  </div>
+  </div>
+  <div class="footer">
+    <div class="container">
+    <div class="row">
+      <div class="col-9"> <b> {{'StayConected' | translate }}</b>
+      <p>{{'Tellusabout' | translate }}</p>
+      </div>
+      <div class="col-3">
+        <input size="40px" class="bg-dark round two" id="email-adress" placeholder="{{'EmailAddres' | translate }}" >
+          <br>
+          <button type="button" class="btn btn-primary btn-xs btn-danger round" style="width: 102px;">{{'Signup' | translate }} <i class="fas fa-arrow-alt-right" ></i></button>
+      </div>
+    </div>
+  </div>
+  </div> 
+
+  <div class="row justify-content-center">
+    <div class="col-8 text-center">
+      {{'Findus' | translate }}
+    </div>
+    <div class="col-8 ">
+      <ul class="list-group list-group-horizontal-lg align-items-center justify-content-center border-0">
+        <li class="list-group-item border-0"><img src="assets/img/1_01.png" style="height: 75px; width: 55px;" alt=""></li>
+        <li class="list-group-item border-0"><img src="assets/img/1_02.png" style="height: 75px; width: 55px;" alt=""></li>
+        <li class="list-group-item border-0"><img src="assets/img/1_03.png" style="height: 75px; width: 55px;" alt=""></li>
+        <li class="list-group-item border-0"><img src="assets/img/1_04.png" style="height: 75px; width: 55px;" alt=""></li>
+      </ul>
+    </div>
+    <hr style="border-top: 1px solid rgb(5, 4, 4);">
+    <div class="col-8 ">
+     
+      <ul class="list-group list-group-horizontal-lg align-items-center justify-content-center">
+        <li class="list-group-item border-0">Renovasolutions.com</li>
+        <li class="list-group-item border-0">{{'viewAllJobs' | translate }}</li>
+        <li class="list-group-item border-0">{{'TopJobSearches' | translate }}</li>
+        <li class="list-group-item border-0">{{'PrivacyPolicy' | translate }}</li>
+      </ul>
+    </div>
+  </div>
+
+</body>

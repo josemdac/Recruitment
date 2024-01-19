@@ -1,0 +1,7 @@
+<div class="container" >
+    <div class="no-questions" *ngIf="!proc.questions || !proc.questions.length">
+        <span>{{'ThisPositionHasNoQuestions' | translate}}</span>
+    </div>
+    <app-ap-proc-question *ngFor="let q of proc.questions" [question]="q" ></app-ap-proc-question>
+</div>
+
